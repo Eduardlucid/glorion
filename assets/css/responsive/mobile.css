@@ -1,0 +1,54 @@
+@media (max-width: 600px) {
+  .section {
+    padding: 70px 0;
+  }
+
+  .hero {
+    min-height: 650px;
+  }
+
+  .logo-text {
+    font-size: 21px;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .placeholder-label {
+    right: 5%;
+    bottom: 25px;
+    font-size: 10px;
+  }
+
+  .introduction-grid {
+    gap: 45px;
+  }
+
+  .image-placeholder {
+    min-height: 350px;
+  }
+
+  .solution-card {
+    min-height: 400px;
+    padding: 30px;
+  }
+
+  .services-grid,
+  .steps-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-number {
+    margin-bottom: 35px;
+  }
+
+  .featured-content {
+    padding: 60px 30px;
+  }
+
+  .contact-cta {
+    padding: 80px 0;
+  }
+}

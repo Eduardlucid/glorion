@@ -1,0 +1,72 @@
+@media (max-width: 950px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navigation {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    background: #ffffff;
+    border-bottom: 1px solid #e7e7e7;
+    transition: max-height 0.3s ease;
+  }
+
+  .navigation.is-open {
+    max-height: 420px;
+  }
+
+  .navigation ul {
+    display: block;
+    width: min(var(--container-width), 90%);
+    margin-inline: auto;
+    padding: 14px 0 24px;
+  }
+
+  .navigation a {
+    min-height: 48px;
+    width: 100%;
+  }
+
+  .navigation a::after {
+    bottom: 7px;
+  }
+
+  .header-button {
+    display: none;
+  }
+
+  .hero {
+    min-height: 680px;
+  }
+
+  .introduction-grid,
+  .featured-project {
+    grid-template-columns: 1fr;
+  }
+
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid,
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured-image {
+    min-height: 450px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

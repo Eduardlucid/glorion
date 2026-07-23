@@ -1,0 +1,19 @@
+.eyebrow {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.placeholder-label {
+  position: absolute;
+  right: 7%;
+  bottom: 45px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

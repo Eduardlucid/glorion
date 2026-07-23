@@ -1,0 +1,89 @@
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+
+  height: var(--header-height);
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e7e7e7;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: var(--header-height);
+  gap: 30px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-image {
+  display: block;
+  width: 170px;
+  height: auto;
+}
+
+/* ===========================
+   Header Actions
+=========================== */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.search-toggle {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 42px;
+  min-height: var(--header-height);
+
+  border: none;
+  background: transparent;
+
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.search-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.search-toggle::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: var(--nav-underline-offset);
+
+  width: 0;
+  height: 2px;
+
+  background: var(--color-primary);
+
+  transition: width var(--transition);
+}
+
+.search-toggle:hover,
+.search-toggle:focus-visible {
+  color: var(--color-text);
+}
+
+.search-toggle:hover::after,
+.search-toggle:focus-visible::after {
+  width: 100%;
+}

@@ -1,0 +1,9 @@
+@media (prefers-reduced-motion: no-preference) {
+  .solution-card,
+  .service-card,
+  .step {
+    transition:
+      transform var(--transition),
+      box-shadow var(--transition);
+  }
+}
