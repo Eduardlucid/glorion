@@ -4,15 +4,43 @@
   }
 
   .hero {
-    min-height: 650px;
+    padding-top: 54px;
+  }
+
+  .hero-content {
+    padding-bottom: 44px;
+  }
+
+  .hero-label {
+    margin-bottom: 18px;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+  }
+
+  .hero h1 {
+    margin-bottom: 22px;
+    font-size: clamp(48px, 15vw, 68px);
+    line-height: 0.96;
+    letter-spacing: -2px;
+  }
+
+  .hero p {
+    max-width: 520px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .hero-visual {
+    min-height: 330px;
+    padding: 18px;
+  }
+
+  .hero-visual span {
+    font-size: 9px;
   }
 
   .logo-text {
     font-size: 21px;
-  }
-
-  .hero h1 {
-    letter-spacing: -1px;
   }
 
   .placeholder-label {

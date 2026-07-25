@@ -1,0 +1,184 @@
+.about {
+  padding: clamp(5rem, 10vw, 10rem) 0;
+  background-color: #f3f3f1;
+  color: #111111;
+}
+
+.about-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+
+.about-header {
+  width: min(100%, 900px);
+  margin-left: auto;
+  margin-bottom: clamp(4rem, 7vw, 7rem);
+}
+
+.about-eyebrow {
+  display: block;
+  margin-bottom: 1.5rem;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: #666666;
+}
+
+.about-title {
+  margin: 0;
+
+  font-size: clamp(2.55rem, 5.2vw, 5.4rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.about-title span {
+  color: #c5161d;
+}
+
+/* Main content */
+
+.about-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 3rem;
+
+  padding-top: 2rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.18);
+}
+
+.about-manifesto,
+.about-message {
+  max-width: 620px;
+}
+
+.about-manifesto > p,
+.about-message > p {
+  margin: 0;
+
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.65;
+
+  color: #3d3d3d;
+}
+
+/* Principles list */
+
+.about-principles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  margin: 2.5rem 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.about-principles li {
+  position: relative;
+
+  padding: 1rem 0 1rem 1.75rem;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.14);
+
+  font-size: clamp(1.15rem, 2vw, 1.75rem);
+  font-weight: 450;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.about-principles li::before {
+  content: "";
+  position: absolute;
+  top: 1.65rem;
+  left: 0;
+
+  width: 0.45rem;
+  height: 0.45rem;
+
+  background-color: #c5161d;
+}
+
+.about-quality {
+  margin-top: 2rem !important;
+  color: #111111 !important;
+}
+
+/* Signature */
+
+.about-signature {
+  margin-top: 3rem;
+  padding-top: 2rem;
+
+  border-top: 1px solid rgba(17, 17, 17, 0.18);
+}
+
+.about-signature p {
+  margin: 0 0 0.55rem;
+
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.about-signature p:last-child {
+  margin-bottom: 0;
+  color: #c5161d;
+}
+
+/* Tablet and desktop */
+
+@media (min-width: 768px) {
+  .about-content {
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.75fr);
+    gap: clamp(4rem, 8vw, 9rem);
+  }
+
+  .about-message {
+    padding-top: 0.25rem;
+  }
+}
+
+/* Phone */
+
+@media (max-width: 767px) {
+  .about {
+    padding: 5rem 0;
+  }
+
+  .about-header {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 3.5rem;
+  }
+
+  .about-title br {
+    display: none;
+  }
+
+  .about-content {
+    gap: 3.5rem;
+  }
+
+  .about-principles li {
+    padding-top: 1.15rem;
+    padding-bottom: 1.15rem;
+  }
+
+  .about-signature {
+    margin-top: 2.75rem;
+  }
+
+  .about-signature p {
+    max-width: none;
+    font-size: 1.45rem;
+  }
+}

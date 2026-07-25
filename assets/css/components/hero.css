@@ -1,59 +1,70 @@
 .hero {
-  position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 760px;
   margin-top: var(--header-height);
+  padding: 88px 0 0;
+  background: #ffffff;
   overflow: hidden;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.76) 0%, rgba(0, 0, 0, 0.53) 45%, rgba(0, 0, 0, 0.12) 100%),
-    linear-gradient(135deg, #8f8f8f, #b6b6b6);
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 760px;
-  padding: 100px 0;
-  color: #ffffff;
+  max-width: 940px;
+  padding-bottom: 72px;
 }
 
 .hero-label {
   display: block;
-  margin-bottom: 20px;
-  font-size: 13px;
+  margin-bottom: 24px;
+  color: var(--color-primary);
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 
 .hero h1 {
-  max-width: 850px;
-  margin-bottom: 28px;
-  font-size: clamp(48px, 7vw, 82px);
+  max-width: 920px;
+  margin: 0 0 28px;
+  color: var(--color-text);
+  font-size: clamp(64px, 8vw, 118px);
   font-weight: 500;
-  letter-spacing: -2px;
+  line-height: 0.93;
+  letter-spacing: -5px;
 }
 
 .hero p {
-  max-width: 630px;
-  margin-bottom: 38px;
-  color: rgba(255, 255, 255, 0.86);
+  max-width: 650px;
+  margin: 0;
+  color: var(--color-text-muted);
   font-size: 19px;
+  line-height: 1.65;
 }
 
-.hero-buttons {
+.hero-visual {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 28px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.06),
+      rgba(0, 0, 0, 0)
+    ),
+    url("../../images/hero/glorion-hero.png") center center / cover no-repeat;
 }
 
-.hero .button-outline {
-  color: #ffffff;
-  border-color: #ffffff;
-}
-
-.hero .button-outline:hover {
-  background: #ffffff;
-  color: var(--color-text);
+.hero-visual span {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }

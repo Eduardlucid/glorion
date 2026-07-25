@@ -1,0 +1,169 @@
+/* ==========================================
+   SERVICES
+========================================== */
+
+.services {
+    padding: 120px 0;
+    background: #ffffff;
+}
+
+.service-item {
+    display: grid;
+    grid-template-columns: 58% 42%;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 140px;
+}
+
+.service-item:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Reverse layout */
+
+.service-item--reverse .service-image {
+    order: 2;
+}
+
+.service-item--reverse .service-content {
+    order: 1;
+}
+
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.service-image {
+    width: 100%;
+}
+
+.service-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.service-content {
+    max-width: 520px;
+}
+
+.service-number {
+
+    display: inline-block;
+
+    margin-bottom: 24px;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+
+    color: #c5161d;
+}
+
+.service-title {
+
+    margin: 0;
+
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1.05;
+
+    color: #111111;
+}
+
+.service-tagline {
+
+    margin-top: 24px;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.45;
+
+    color: #444444;
+}
+
+.service-description {
+
+    margin-top: 34px;
+
+    font-size: 19px;
+    line-height: 1.9;
+
+    color: #555555;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:1100px){
+
+    .service-item{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+        margin-bottom:100px;
+
+    }
+
+    .service-item--reverse .service-image,
+    .service-item--reverse .service-content{
+
+        order:initial;
+
+    }
+
+    .service-content{
+
+        max-width:100%;
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .services{
+
+        padding:80px 0;
+
+    }
+
+    .service-title{
+
+        font-size:38px;
+
+    }
+
+    .service-tagline{
+
+        font-size:20px;
+
+    }
+
+    .service-description{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+}

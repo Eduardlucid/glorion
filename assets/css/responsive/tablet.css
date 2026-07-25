@@ -45,8 +45,22 @@
   }
 
   .hero {
-    min-height: 680px;
-  }
+  padding-top: 72px;
+}
+
+.hero-content {
+  max-width: 760px;
+  padding-bottom: 58px;
+}
+
+.hero h1 {
+  font-size: clamp(58px, 10vw, 88px);
+  letter-spacing: -3px;
+}
+
+.hero-visual {
+  min-height: 430px;
+}
 
   .introduction-grid,
   .featured-project {
