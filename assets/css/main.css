@@ -16,8 +16,7 @@
 
 @import url("./sections/about.css");
 @import url("./sections/services.css");
-@import url("sections/services.css");
-@import url("sections/capabilities.css");
+@import url("./sections/capabilities.css");
 
 @import url("./pages/home.css");
 
