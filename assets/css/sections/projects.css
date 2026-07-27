@@ -1,0 +1,238 @@
+/* ==========================================
+   PROJECTS
+========================================== */
+
+.projects {
+  padding: 100px 0;
+  background: #f5f5f5;
+}
+
+.projects-header {
+  max-width: 760px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.projects-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #c5161d;
+}
+
+.projects-title {
+  margin: 0 0 18px;
+}
+
+.projects-intro {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.project-card {
+  width: 100%;
+}
+
+.project-gallery {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    16px
+    minmax(0, 1fr)
+    16px
+    minmax(0, 1fr);
+
+  align-items: stretch;
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-panel {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.project-panel img {
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* ==========================================
+   GLORION DIVIDER
+========================================== */
+
+.glorion-divider {
+  position: relative;
+  width: 16px;
+  height: 100%;
+}
+
+/* Общая белая вертикальная линия */
+
+.glorion-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: #ffffff;
+  transform: translateX(-50%);
+}
+
+/* Старые HTML-линии не используются */
+
+.divider-top,
+.divider-bottom {
+  display: none;
+}
+
+/* Центральная зона с двумя красными узлами */
+
+.divider-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 230px;
+  transform: translate(-50%, -50%);
+}
+
+/* Каждый span становится отдельным узлом */
+
+.divider-core span {
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 54px;
+  background: #c5161d;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Верхний узел */
+
+.divider-core span:first-child {
+  top: 22px;
+}
+
+/* Нижний узел */
+
+.divider-core span:last-child {
+  bottom: 22px;
+}
+
+/* Верхний и нижний ромбы каждого узла */
+
+.divider-core span::before,
+.divider-core span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: #c5161d;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* Ромб сверху */
+
+.divider-core span::before {
+  top: -2px;
+}
+
+/* Ромб снизу */
+
+.divider-core span::after {
+  bottom: -2px;
+}
+
+/* Маска создаёт большой разрыв между двумя узлами */
+
+.divider-core::before {
+  content: "";
+  position: absolute;
+  top: 82px;
+  bottom: 82px;
+  left: 50%;
+  width: 8px;
+  background: #f5f5f5;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+  .projects {
+    padding: 80px 0;
+  }
+
+  .projects-header {
+    margin-bottom: 40px;
+  }
+
+  .project-gallery {
+    grid-template-columns:
+      minmax(0, 1fr)
+      14px
+      minmax(0, 1fr)
+      14px
+      minmax(0, 1fr);
+  }
+
+  .project-panel img {
+    height: 420px;
+  }
+
+  .glorion-divider {
+    width: 14px;
+  }
+
+  .divider-core {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 767px) {
+  .projects {
+    padding: 64px 0;
+  }
+
+  .projects-header {
+    margin-bottom: 30px;
+  }
+
+  .project-gallery {
+    grid-template-columns:
+      minmax(0, 1fr)
+      10px
+      minmax(0, 1fr)
+      10px
+      minmax(0, 1fr);
+  }
+
+  .project-panel img {
+    height: 260px;
+  }
+
+  .glorion-divider {
+    width: 10px;
+  }
+
+  .divider-core {
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
