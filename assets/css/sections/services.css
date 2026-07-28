@@ -36,7 +36,7 @@
 }
 
 /* ==========================================
-   SERVICE GALLERY — A / PATH / B
+   SERVICE GALLERY — 1 / 2 / 3
 ========================================== */
 
 .service-gallery {
@@ -51,6 +51,7 @@
     width: 100%;
     min-width: 0;
     min-height: 520px;
+
     overflow: hidden;
     background: #ffffff;
 }
@@ -65,7 +66,9 @@
     display: block;
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+    object-position: center;
 }
 
 /* ==========================================
@@ -73,40 +76,36 @@
 ========================================== */
 
 .service-divider {
-
     position: relative;
 
     width: 4px;
     height: 100%;
 
-    background: transparent;
-
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background: transparent;
 }
 
 .service-divider::after {
-
     content: "";
 
     position: absolute;
 
     top: 35%;
     bottom: 35%;
-
-    left: 1px;
-    right: 1px;
-
-    margin: auto;
+    left: 50%;
 
     width: 2px;
+
+    transform: translateX(-50%);
 
     background: linear-gradient(
         to bottom,
         transparent,
-        #c5161d 12%,
-        #c5161d 88%,
+        #c5161d 50%,
+        #c5161d 50%,
         transparent
     );
 
@@ -124,6 +123,7 @@
 
     width: 100%;
     padding: 40px 56px;
+
     box-sizing: border-box;
 }
 
@@ -169,10 +169,10 @@
 }
 
 /* ==========================================
-   TABLET
+   TABLET — 768px–1023px
 ========================================== */
 
-@media (max-width: 1100px) {
+@media (min-width: 768px) and (max-width: 1023px) {
 
     .services {
         padding: 100px 0;
@@ -191,7 +191,7 @@
 
     .service-gallery {
         min-height: 0;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 4 / 3;
     }
 
     .service-content {
@@ -200,18 +200,24 @@
 }
 
 /* ==========================================
-   MOBILE
+   MOBILE — 0px–767px
 ========================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .services {
         padding: 72px 0;
     }
 
     .service-item {
+        grid-template-columns: 1fr;
         gap: 30px;
         margin-bottom: 80px;
+    }
+
+    .service-item--reverse .service-gallery,
+    .service-item--reverse .service-content {
+        order: initial;
     }
 
     .service-gallery {
@@ -222,6 +228,7 @@
             3px
             minmax(0, 1fr);
 
+        min-height: 0;
         aspect-ratio: 4 / 3;
     }
 
@@ -229,20 +236,8 @@
         width: 3px;
     }
 
-    .service-divider::before {
+    .service-divider::after {
         width: 1px;
-    }
-
-    .service-divider .divider-core {
-        width: 14px;
-        height: 34px;
-        gap: 2px;
-    }
-
-    .service-divider .divider-core span {
-        width: 5px;
-        height: 5px;
-        border-width: 1.5px;
     }
 
     .service-content {
@@ -261,5 +256,28 @@
     .service-description {
         font-size: 17px;
         line-height: 1.75;
+    }
+}
+
+/* ==========================================
+   LARGE SCREEN — 1600px+
+========================================== */
+
+@media (min-width: 1600px) {
+
+    .services {
+        padding: 140px 0;
+    }
+
+    .service-item {
+        margin-bottom: 140px;
+    }
+
+    .service-gallery {
+        min-height: 580px;
+    }
+
+    .service-content {
+        padding: 48px 72px;
     }
 }

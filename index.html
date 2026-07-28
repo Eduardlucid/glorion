@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <meta
     name="description"
-    content="GLORION Technologies provides structured cabling, fiber optics, security, AV and connected technology solutions."
+    content="GLORION Technologies provides structured cabling, fiber optics, WiFi, CCTV, security systems, audio and video solutions."
   >
 
-  <meta name="theme-color" content="#c5161d">
+  <meta
+    name="theme-color"
+    content="#c5161d"
+  >
 
   <title>GLORION Technologies Inc.</title>
 
@@ -49,21 +57,40 @@
     href="assets/images/brand/favicons/site.webmanifest"
   >
 
-  <link rel="stylesheet" href="assets/css/main.css">
+  <link
+    rel="stylesheet"
+    href="assets/css/main.css"
+  >
 </head>
 
 <body id="top">
 
-  <header class="site-header" id="site-header">
+  <!-- ==========================================
+       HEADER
+  =========================================== -->
+
+  <header
+    class="site-header"
+    id="site-header"
+  >
+
     <div class="container header-inner">
 
-      <a href="#top" class="logo" aria-label="GLORION home">
+      <!-- Logo -->
+
+      <a
+        href="#top"
+        class="logo"
+        aria-label="GLORION home"
+      >
         <img
           src="assets/images/brand/logos/glorion-logo.svg"
           alt="GLORION Technologies Inc."
           class="logo-image"
         >
       </a>
+
+      <!-- Mobile menu button -->
 
       <button
         class="menu-toggle"
@@ -77,33 +104,115 @@
         <span></span>
       </button>
 
+      <!-- Navigation -->
+
       <nav
         class="navigation"
         id="primary-navigation"
         aria-label="Primary navigation"
       >
-        <ul>
-          <li>
-            <a href="#about">About</a>
+
+        <ul class="navigation-list">
+
+          <li class="navigation-item">
+            <a
+              class="navigation-link"
+              href="#about"
+            >
+              About
+            </a>
           </li>
 
-          <li>
-            <a href="#services">Services</a>
+          <!-- Services with submenu -->
+
+          <li class="navigation-item navigation-item--submenu">
+
+            <button
+              class="navigation-link submenu-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="services-submenu"
+            >
+              Services
+            </button>
+
+            <ul
+              class="navigation-submenu"
+              id="services-submenu"
+            >
+
+              <li>
+                <a href="#structured-cabling">
+                  Structured Cabling
+                </a>
+              </li>
+
+              <li>
+                <a href="#fiber-optic">
+                  Fiber Optic
+                </a>
+              </li>
+
+              <li>
+                <a href="#wifi">
+                  WiFi
+                </a>
+              </li>
+
+              <li>
+                <a href="#cctv">
+                  CCTV
+                </a>
+              </li>
+
+              <li>
+                <a href="#security-systems">
+                  Security Systems
+                </a>
+              </li>
+
+              <li>
+                <a href="#audio-video">
+                  Audio &amp; Video
+                </a>
+              </li>
+
+            </ul>
+
           </li>
 
-          <li>
-            <a href="#capabilities">Capabilities</a>
+          <li class="navigation-item">
+            <a
+              class="navigation-link"
+              href="#capabilities"
+            >
+              Capabilities
+            </a>
           </li>
 
-          <li>
-            <a href="#projects">Projects</a>
+          <li class="navigation-item">
+            <a
+              class="navigation-link"
+              href="#projects"
+            >
+              Projects
+            </a>
           </li>
 
-          <li>
-            <a href="#contact">Contact</a>
+          <li class="navigation-item">
+            <a
+              class="navigation-link"
+              href="#contact"
+            >
+              Contact
+            </a>
           </li>
+
         </ul>
+
       </nav>
+
+      <!-- Header actions -->
 
       <div class="header-actions">
 
@@ -138,16 +247,21 @@
           </svg>
         </button>
 
-        <a href="#quote" class="button header-button">
+        <a
+          href="#quote"
+          class="button header-button"
+        >
           Get a Quote
         </a>
 
       </div>
 
     </div>
+
   </header>
 
   <main>
+
 
     <!-- ==========================================
          HERO
@@ -255,7 +369,10 @@
 
     <!-- Service 01 -->
 
-    <article class="service-item">
+    <article 
+      class="service-item service-item--reverse"
+      id="structured-cabling"
+>
 
       <div class="service-gallery">
 
@@ -317,7 +434,10 @@
 
     <!-- Service 02 -->
 
-    <article class="service-item service-item--reverse">
+    <article 
+      class="service-item service-item--reverse"
+      id="fiber-optic"
+>
 
       <div class="service-gallery">
 
@@ -379,254 +499,256 @@
 
     <!-- Service 03 -->
 
-    <article class="service-item">
+<article
+  class="service-item"
+  id="wifi"
+>
 
-      <div class="service-gallery">
+  <div class="service-gallery">
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/wifi-network/1.webp"
-            alt="Wireless network environment before installation"
-            loading="lazy"
-          >
-        </div>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/wifi-network/1.webp"
+        alt="Wireless network environment before installation"
+        loading="lazy"
+      >
+    </div>
 
-        <div class="service-divider" aria-hidden="true">
-        </div>
+    <div class="service-divider" aria-hidden="true"></div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/wifi-network/2.webp"
-            alt="Professional WiFi network installation process"
-            loading="lazy"
-          >
-        </div>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/wifi-network/2.webp"
+        alt="Professional WiFi network installation process"
+        loading="lazy"
+      >
+    </div>
 
-        <div class="service-divider" aria-hidden="true">
-        </div>
+    <div class="service-divider" aria-hidden="true"></div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/wifi-network/3.webp"
-            alt="Completed commercial WiFi network"
-            loading="lazy"
-          >
-        </div>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/wifi-network/3.webp"
+        alt="Completed commercial WiFi network"
+        loading="lazy"
+      >
+    </div>
 
-      </div>
+  </div>
 
-      <div class="service-content">
+  <div class="service-content">
 
-        <span class="service-number">03</span>
+    <span class="service-number">03</span>
 
-        <h2 class="service-title">
-          WiFi Network
-        </h2>
+    <h2 class="service-title">
+      WiFi
+    </h2>
 
-        <p class="service-tagline">
-          Reliable wireless coverage engineered for every space.
-        </p>
+    <p class="service-tagline">
+      Reliable wireless coverage engineered for every space.
+    </p>
 
-        <p class="service-description">
-          Professionally designed WiFi infrastructure provides seamless
-          coverage, reliable roaming and stable high-speed connectivity
-          throughout offices, commercial buildings, hospitality spaces
-          and modern homes, supporting secure communication and
-          uninterrupted daily operation.
-        </p>
+    <p class="service-description">
+      Professionally designed WiFi infrastructure provides seamless
+      coverage, reliable roaming and stable high-speed connectivity
+      throughout offices, commercial buildings, hospitality spaces
+      and modern homes, supporting secure communication and
+      uninterrupted daily operation.
+    </p>
 
-      </div>
+  </div>
 
-    </article>
-
+</article>
     <!-- Service 04 -->
 
-    <article class="service-item service-item--reverse">
+<article
+  class="service-item service-item--reverse"
+  id="cctv"
+>
 
-      <div class="service-gallery">
+  <div class="service-gallery">
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/cctv-video/1.webp"
-            alt="Property before CCTV installation"
-            loading="lazy"
-          >
-        </div>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/cctv-video/1.webp"
+        alt="Property before CCTV installation"
+        loading="lazy"
+      >
+    </div>
 
-        <div class="service-divider" aria-hidden="true">
-        </div>
+    <div class="service-divider" aria-hidden="true"></div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/cctv-video/2.webp"
-            alt="CCTV and video surveillance installation process"
-            loading="lazy"
-          >
-        </div>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/cctv-video/2.webp"
+        alt="CCTV and video surveillance installation process"
+        loading="lazy"
+      >
+    </div>
 
-        <div class="service-divider" aria-hidden="true">
-        </div>
+    <div class="service-divider" aria-hidden="true"></div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/cctv-video/3.webp"
-            alt="Completed CCTV and video surveillance system"
-            loading="lazy"
-          >
-        </div>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/cctv-video/3.webp"
+        alt="Completed CCTV and video surveillance system"
+        loading="lazy"
+      >
+    </div>
 
-      </div>
+  </div>
 
-      <div class="service-content">
+  <div class="service-content">
 
-        <span class="service-number">04</span>
+    <span class="service-number">04</span>
 
-        <h2 class="service-title">
-          CCTV &amp; Video
-        </h2>
+    <h2 class="service-title">
+      CCTV
+    </h2>
 
-        <p class="service-tagline">
-          Complete visibility. Around the clock.
-        </p>
+    <p class="service-tagline">
+      Complete visibility. Around the clock.
+    </p>
 
-        <p class="service-description">
-          Professional IP surveillance systems designed to protect
-          commercial buildings, offices, warehouses, hospitality venues
-          and residential properties. GLORION delivers intelligent camera
-          infrastructure, reliable recording systems and centralized
-          monitoring solutions that provide continuous awareness and
-          long-term operational confidence.
-        </p>
+    <p class="service-description">
+      Professional IP surveillance systems designed to protect
+      commercial buildings, offices, warehouses, hospitality venues
+      and residential properties. GLORION delivers intelligent camera
+      infrastructure, reliable recording systems and centralized
+      monitoring solutions that provide continuous awareness and
+      long-term operational confidence.
+    </p>
 
-      </div>
+  </div>
 
-    </article>
-
+</article>
     <!-- Service 05 -->
 
-    <article class="service-item">
+<article
+  class="service-item"
+  id="security-systems"
+>
 
-      <div class="service-gallery">
+  <div class="service-gallery">
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/security/1.webp"
-            alt="Property before security system installation"
-            loading="lazy"
-          >
-        </div>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/security/1.webp"
+        alt="Property before security system installation"
+        loading="lazy"
+      >
+    </div>
 
-        <div class="service-divider" aria-hidden="true">
-        </div>
+    <div class="service-divider" aria-hidden="true"></div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/security/2.webp"
-            alt="Security system installation process"
-            loading="lazy"
-          >
-        </div>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/security/2.webp"
+        alt="Security system installation process"
+        loading="lazy"
+      >
+    </div>
 
-        <div class="service-divider" aria-hidden="true">
-        </div>
+    <div class="service-divider" aria-hidden="true"></div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/security/3.webp"
-            alt="Completed integrated security system"
-            loading="lazy"
-          >
-        </div>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/security/3.webp"
+        alt="Completed integrated security system"
+        loading="lazy"
+      >
+    </div>
 
-      </div>
+  </div>
 
-      <div class="service-content">
+  <div class="service-content">
 
-        <span class="service-number">05</span>
+    <span class="service-number">05</span>
 
-        <h2 class="service-title">
-          Security
-        </h2>
+    <h2 class="service-title">
+      Security Systems
+    </h2>
 
-        <p class="service-tagline">
-          Protecting people, property and everyday operations.
-        </p>
+    <p class="service-tagline">
+      Protecting people, property and everyday operations.
+    </p>
 
-        <p class="service-description">
-          Integrated security solutions including access control,
-          intrusion detection, intercom systems and intelligent building
-          security. Every installation is designed to provide dependable
-          protection, controlled access and seamless integration with
-          your existing technology infrastructure.
-        </p>
+    <p class="service-description">
+      Integrated security solutions including access control,
+      intrusion detection, intercom systems and intelligent building
+      security. Every installation is designed to provide dependable
+      protection, controlled access and seamless integration with
+      your existing technology infrastructure.
+    </p>
 
-      </div>
+  </div>
 
-    </article>
+</article>
 
     <!-- Service 06 -->
 
-    <article class="service-item service-item--reverse">
+<article
+  class="service-item service-item--reverse"
+  id="audio-video"
+>
 
-      <div class="service-gallery">
+  <div class="service-gallery">
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/audio-video/1.webp"
-            alt="Space before audio and video system installation"
-            loading="lazy"
-          >
-        </div>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/audio-video/1.webp"
+        alt="Space before audio and video system installation"
+        loading="lazy"
+      >
+    </div>
 
-        <div class="service-divider" aria-hidden="true">
-        </div>
+    <div class="service-divider" aria-hidden="true"></div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/audio-video/2.webp"
-            alt="Audio and video system installation process"
-            loading="lazy"
-          >
-        </div>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/audio-video/2.webp"
+        alt="Audio and video system installation process"
+        loading="lazy"
+      >
+    </div>
 
-        <div class="service-divider" aria-hidden="true">
-        </div>
+    <div class="service-divider" aria-hidden="true"></div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/audio-video/3.webp"
-            alt="Completed professional audio and video system"
-            loading="lazy"
-          >
-        </div>
-
-      </div>
-
-      <div class="service-content">
-
-        <span class="service-number">06</span>
-
-        <h2 class="service-title">
-          Audio &amp; Video
-        </h2>
-
-        <p class="service-tagline">
-          Technology that sounds as good as it looks.
-        </p>
-
-        <p class="service-description">
-          Professional audio and video systems for boardrooms,
-          restaurants, retail spaces, hospitality environments and luxury
-          homes. From background music to presentation systems and
-          digital displays, every solution is engineered for exceptional
-          performance and effortless daily operation.
-        </p>
-
-      </div>
-
-    </article>
+    <div class="service-panel">
+      <img
+        src="assets/images/services/audio-video/3.webp"
+        alt="Completed professional audio and video system"
+        loading="lazy"
+      >
+    </div>
 
   </div>
+
+  <div class="service-content">
+
+    <span class="service-number">06</span>
+
+    <h2 class="service-title">
+      Audio &amp; Video
+    </h2>
+
+    <p class="service-tagline">
+      Technology that sounds as good as it looks.
+    </p>
+
+    <p class="service-description">
+      Professional audio and video systems for boardrooms,
+      restaurants, retail spaces, hospitality environments and luxury
+      homes. From background music to presentation systems and
+      digital displays, every solution is engineered for exceptional
+      performance and effortless daily operation.
+    </p>
+
+  </div>
+
+</article>
+
+</div>
 </section>
 
     <!-- ==========================================

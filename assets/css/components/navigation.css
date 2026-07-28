@@ -1,31 +1,60 @@
+/* ==========================================
+   PRIMARY NAVIGATION
+=========================================== */
+
 .navigation {
   margin-left: auto;
 }
 
-.navigation ul {
+/* Только главный список Header */
+
+.navigation > .navigation-list {
   display: flex;
   align-items: center;
   gap: 34px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
 }
 
-.navigation li {
+.navigation-item {
   position: relative;
 }
 
-.navigation a {
+/* ==========================================
+   MAIN NAVIGATION LINKS
+=========================================== */
+
+.navigation-link {
   position: relative;
+
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+
   min-height: var(--header-height);
+  padding: 0;
+
+  border: none;
+  background: transparent;
 
   color: var(--color-text);
-
+  font-family: inherit;
   font-size: 14px;
   font-weight: 600;
+  line-height: 1;
+
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.navigation a::after {
+/* Horizontal GLORION line */
+
+.navigation-link::after {
   content: "";
+
   position: absolute;
   bottom: var(--nav-underline-offset);
   left: 0;
@@ -34,16 +63,152 @@
   height: 2px;
 
   background: var(--color-primary);
+
   transition: width var(--transition);
 }
 
-.navigation a:hover::after,
-.navigation a:focus-visible::after {
+.navigation-link:hover::after,
+.navigation-link:focus-visible::after,
+.navigation-item--submenu:hover > .navigation-link::after,
+.navigation-item--submenu:focus-within > .navigation-link::after {
   width: 100%;
 }
 
+/* ==========================================
+   SERVICES SUBMENU
+=========================================== */
+
+.navigation-submenu {
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 0;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+
+  min-width: 235px;
+  margin: 0;
+  padding: 12px 0;
+
+  list-style: none;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.04);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(8px);
+
+  transition:
+    opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition);
+}
+
+/* Open submenu on desktop */
+
+.navigation-item--submenu:hover > .navigation-submenu,
+.navigation-item--submenu:focus-within > .navigation-submenu,
+.navigation-item--submenu.is-open > .navigation-submenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateY(0);
+}
+
+/* Submenu items */
+
+.navigation-submenu li {
+  position: relative;
+
+  display: block;
+  width: 100%;
+}
+
+/* Vertical GLORION line */
+
+.navigation-submenu a {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 22px 10px 28px;
+
+  color: var(--color-text);
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+
+  text-decoration: none;
+
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    padding-left var(--transition);
+}
+
+.navigation-submenu a::before {
+  content: "";
+
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 14px;
+
+  width: 2px;
+
+  background: var(--color-primary);
+
+  opacity: 0;
+  transform: scaleY(0.35);
+
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+}
+
+.navigation-submenu a:hover,
+.navigation-submenu a:focus-visible,
+.navigation-submenu a.is-active {
+  padding-left: 32px;
+
+  background: rgba(197, 22, 29, 0.04);
+}
+
+.navigation-submenu a:hover::before,
+.navigation-submenu a:focus-visible::before,
+.navigation-submenu a.is-active::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* Remove horizontal underline from submenu */
+
+.navigation-submenu a::after {
+  display: none;
+}
+
+/* ==========================================
+   MOBILE MENU BUTTON
+=========================================== */
+
 .menu-toggle {
   display: none;
+
   width: 42px;
   height: 42px;
   padding: 9px;
@@ -56,6 +221,7 @@
 
 .menu-toggle span {
   display: block;
+
   width: 100%;
   height: 2px;
   margin: 5px 0;
