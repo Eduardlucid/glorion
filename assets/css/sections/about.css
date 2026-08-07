@@ -1,6 +1,6 @@
 .about {
   padding: clamp(5rem, 10vw, 10rem) 0;
-  background-color: #f3f3f1;
+  background: transparent;
   color: #111111;
 }
 

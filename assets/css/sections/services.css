@@ -3,40 +3,58 @@
 ========================================== */
 
 .services {
-    padding: 120px 0;
-    background: #ffffff;
+    padding: var(--section-padding) 0;
+    background: var(--color-surface);
+    scroll-margin-top: var(--header-height);
 }
 
 .services-container {
     width: 100%;
 }
 
+.services-header {
+    margin-bottom: 80px;
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+/* ==========================================
+   SERVICE ITEM
+========================================== */
+
 .service-item {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: stretch;
-    gap: 0;
-    margin-bottom: 120px;
+    min-width: 0;
+
+    scroll-margin-top: calc(var(--header-height) + 24px);
 }
 
-.service-item:last-child {
-    margin-bottom: 0;
+/* Чёткое чередование блоков */
+
+.service-item:nth-child(odd) .service-gallery {
+    order: 1;
 }
 
-/* ==========================================
-   REVERSE LAYOUT
-========================================== */
-
-.service-item--reverse .service-gallery {
+.service-item:nth-child(odd) .service-content {
     order: 2;
 }
 
-.service-item--reverse .service-content {
+.service-item:nth-child(even) .service-gallery {
+    order: 2;
+}
+
+.service-item:nth-child(even) .service-content {
     order: 1;
 }
 
 /* ==========================================
-   SERVICE GALLERY — 1 / 2 / 3
+   SERVICE GALLERY
 ========================================== */
 
 .service-gallery {
@@ -48,12 +66,11 @@
         4px
         minmax(0, 1fr);
 
-    width: 100%;
     min-width: 0;
     min-height: 520px;
 
     overflow: hidden;
-    background: #ffffff;
+    background: var(--color-surface);
 }
 
 .service-panel {
@@ -63,7 +80,6 @@
 }
 
 .service-panel img {
-    display: block;
     width: 100%;
     height: 100%;
 
@@ -77,43 +93,26 @@
 
 .service-divider {
     position: relative;
-
     width: 4px;
     height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: transparent;
 }
 
 .service-divider::after {
     content: "";
 
     position: absolute;
-
     top: 35%;
     bottom: 35%;
     left: 50%;
 
     width: 2px;
 
+    background: var(--color-primary);
     transform: translateX(-50%);
-
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        #c5161d 50%,
-        #c5161d 50%,
-        transparent
-    );
-
-    z-index: 10;
 }
 
 /* ==========================================
-   CONTENT
+   SERVICE CONTENT
 ========================================== */
 
 .service-content {
@@ -122,70 +121,58 @@
     justify-content: center;
 
     width: 100%;
-    padding: 40px 56px;
-
-    box-sizing: border-box;
-}
-
-.service-number {
-    display: inline-block;
-    margin-bottom: 20px;
-
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-
-    color: #c5161d;
+    padding: clamp(40px, 4vw, 64px);
 }
 
 .service-title {
-    margin: 0;
-
     font-size: clamp(42px, 4vw, 58px);
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.08;
-
-    color: #111111;
 }
 
 .service-tagline {
     margin-top: 22px;
 
-    font-size: 25px;
+    color: var(--color-text);
+
+    font-size: clamp(21px, 2vw, 25px);
     font-weight: 400;
     line-height: 1.4;
-
-    color: #333333;
 }
 
 .service-description {
     margin-top: 28px;
 
+    color: var(--color-text-muted);
+
     font-size: 19px;
     line-height: 1.75;
-
-    color: #4a4a4a;
 }
 
 /* ==========================================
-   TABLET — 768px–1023px
+   TABLET
 ========================================== */
 
-@media (min-width: 768px) and (max-width: 1023px) {
-
+@media (max-width: 1024px) {
     .services {
-        padding: 100px 0;
+        padding: var(--section-padding-tablet) 0;
+    }
+
+    .services-header {
+        margin-bottom: 64px;
+    }
+
+    .services-list {
+        gap: 96px;
     }
 
     .service-item {
         grid-template-columns: 1fr;
-        gap: 40px;
-        margin-bottom: 100px;
+        gap: 36px;
     }
 
-    .service-item--reverse .service-gallery,
-    .service-item--reverse .service-content {
+    .service-item .service-gallery,
+    .service-item .service-content {
         order: initial;
     }
 
@@ -200,24 +187,24 @@
 }
 
 /* ==========================================
-   MOBILE — 0px–767px
+   MOBILE
 ========================================== */
 
 @media (max-width: 767px) {
-
     .services {
-        padding: 72px 0;
+        padding: var(--section-padding-mobile) 0;
+    }
+
+    .services-header {
+        margin-bottom: 48px;
+    }
+
+    .services-list {
+        gap: 72px;
     }
 
     .service-item {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        margin-bottom: 80px;
-    }
-
-    .service-item--reverse .service-gallery,
-    .service-item--reverse .service-content {
-        order: initial;
+        gap: 28px;
     }
 
     .service-gallery {
@@ -228,7 +215,6 @@
             3px
             minmax(0, 1fr);
 
-        min-height: 0;
         aspect-ratio: 4 / 3;
     }
 
@@ -250,27 +236,20 @@
 
     .service-tagline {
         font-size: 21px;
-        line-height: 1.45;
     }
 
     .service-description {
         font-size: 17px;
-        line-height: 1.75;
     }
 }
 
 /* ==========================================
-   LARGE SCREEN — 1600px+
+   LARGE SCREENS
 ========================================== */
 
 @media (min-width: 1600px) {
-
-    .services {
-        padding: 140px 0;
-    }
-
-    .service-item {
-        margin-bottom: 140px;
+    .services-list {
+        gap: 140px;
     }
 
     .service-gallery {
@@ -278,6 +257,6 @@
     }
 
     .service-content {
-        padding: 48px 72px;
+        padding: 56px 72px;
     }
 }

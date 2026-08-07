@@ -1,29 +1,124 @@
 .section {
-  padding: 100px 0;
+
+    padding: var(--section-padding) 0;
+
 }
 
 .section-title {
-  max-width: 760px;
-  margin: 0 auto 60px;
-  text-align: center;
-}
 
-.section-title span {
-  display: block;
-  margin-bottom: 12px;
-  color: var(--color-primary);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+    max-width: 760px;
+
+    margin: 0 auto 64px;
+
+    text-align: center;
+
 }
 
 .section-title h2 {
-  margin-bottom: 20px;
-  font-size: clamp(34px, 5vw, 54px);
-  font-weight: 600;
+
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0 0 22px;
+
+    padding-left: 28px;
+
+    color: var(--color-text);
+
+    font-size: clamp(34px, 5vw, 54px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+
+}
+
+.section-title h2::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: .42em;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: var(--color-primary);
+
 }
 
 .section-title p {
-  font-size: 18px;
+
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    color: var(--color-text-muted);
+
+    font-size: 18px;
+    line-height: 1.75;
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:1024px){
+
+    .section{
+
+        padding: var(--section-padding-tablet) 0;
+
+    }
+
+    .section-title{
+
+        margin-bottom:52px;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .section{
+
+        padding: var(--section-padding-mobile) 0;
+
+    }
+
+    .section-title{
+
+        margin-bottom:40px;
+
+    }
+
+    .section-title h2{
+
+        padding-left:22px;
+
+    }
+
+    .section-title h2::before{
+
+        width:8px;
+        height:8px;
+
+    }
+
+    .section-title p{
+
+        font-size:17px;
+
+    }
+
 }

@@ -3,168 +3,351 @@
 ========================================== */
 
 .projects {
-  padding: 100px 0;
-  background: #f5f5f5;
+  padding: var(--section-padding) 0;
+  background: var(--color-surface-soft);
+  scroll-margin-top: var(--header-height);
 }
 
 .projects-header {
-  max-width: 760px;
-  margin: 0 auto 50px;
-  text-align: center;
-}
-
-.projects-eyebrow {
-  display: inline-block;
-  margin-bottom: 14px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #c5161d;
-}
-
-.projects-title {
-  margin: 0 0 18px;
-}
-
-.projects-intro {
-  margin: 0;
-  line-height: 1.7;
-}
-
-.project-card {
-  width: 100%;
-}
-
-.project-gallery {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    16px
-    minmax(0, 1fr)
-    16px
-    minmax(0, 1fr);
-
-  align-items: stretch;
-  width: 100%;
-  overflow: hidden;
-}
-
-.project-panel {
-  min-width: 0;
-  overflow: hidden;
-}
-
-.project-panel img {
-  display: block;
-  width: 100%;
-  height: 520px;
-  object-fit: cover;
+  margin-bottom: 56px;
 }
 
 /* ==========================================
-   GLORION DIVIDER
+   MODULE
 ========================================== */
 
-.glorion-divider {
+.projects-module {
+  width: 100%;
+}
+
+/* ==========================================
+   REGION TABS
+========================================== */
+
+.projects-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  margin-bottom: 38px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.projects-tab {
   position: relative;
-  width: 16px;
-  height: 100%;
+
+  min-height: 68px;
+  padding: 0 24px;
+
+  color: var(--color-text);
+  background: transparent;
+
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
 }
 
-/* Общая белая вертикальная линия */
-
-.glorion-divider::before {
+.projects-tab::after {
   content: "";
+
   position: absolute;
-  top: 0;
+  left: 50%;
+  bottom: -1px;
+
+  width: 56px;
+  height: 3px;
+
+  background: var(--color-primary);
+
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+
+  transition: transform var(--transition);
+}
+
+.projects-tab:hover::after,
+.projects-tab:focus-visible::after,
+.projects-tab.is-active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.projects-tab:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -4px;
+}
+
+/* ==========================================
+   GALLERY
+========================================== */
+
+.projects-gallery {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) 46px;
+  align-items: center;
+  gap: 18px;
+}
+
+.projects-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.projects-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 72px) / 4);
+  gap: 24px;
+
+  transition: transform 0.45s ease;
+}
+
+/* ==========================================
+   PROJECT PREVIEW
+========================================== */
+
+.project-preview {
+  position: relative;
+
+  min-width: 0;
+  padding: 0 0 14px;
+
+  color: var(--color-text);
+  background: transparent;
+
+  text-align: left;
+
+  opacity: 1;
+
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+}
+
+.projects-track.has-selection .project-preview:not(.is-active) {
+  opacity: 0.42;
+}
+
+.project-preview:hover,
+.project-preview:focus-visible,
+.project-preview.is-active {
+  opacity: 1;
+}
+
+.project-preview::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
   bottom: 0;
-  left: 50%;
-  width: 1px;
-  background: #ffffff;
-  transform: translateX(-50%);
+
+  width: 100%;
+  height: 3px;
+
+  background: var(--color-primary);
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition: transform var(--transition);
 }
 
-/* Старые HTML-линии не используются */
-
-.divider-top,
-.divider-bottom {
-  display: none;
+.project-preview:hover::after,
+.project-preview:focus-visible::after,
+.project-preview.is-active::after {
+  transform: scaleX(1);
 }
 
-/* Центральная зона с двумя красными узлами */
-
-.divider-core {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 16px;
-  height: 230px;
-  transform: translate(-50%, -50%);
+.project-preview:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
 }
 
-/* Каждый span становится отдельным узлом */
+/* ==========================================
+   PROJECT IMAGE
+========================================== */
 
-.divider-core span {
-  position: absolute;
-  left: 50%;
-  width: 2px;
-  height: 54px;
-  background: #c5161d;
-  transform: translateX(-50%);
-  z-index: 2;
+.project-preview-image {
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #ddddda;
 }
 
-/* Верхний узел */
+.project-preview-image img {
+  width: 100%;
+  height: 100%;
 
-.divider-core span:first-child {
-  top: 22px;
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
 }
 
-/* Нижний узел */
-
-.divider-core span:last-child {
-  bottom: 22px;
+.project-preview:hover .project-preview-image img,
+.project-preview:focus-visible .project-preview-image img,
+.project-preview.is-active .project-preview-image img {
+  transform: scale(1.1);
 }
 
-/* Верхний и нижний ромбы каждого узла */
+.project-preview-image-placeholder {
+  color: var(--color-text-muted);
 
-.divider-core span::before,
-.divider-core span::after {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-preview-title {
+  display: block;
+  margin-top: 14px;
+
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* ==========================================
+   ARROWS
+========================================== */
+
+.projects-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  color: var(--color-text);
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  font-size: 21px;
+
+  transition:
+    border-color var(--transition),
+    opacity var(--transition);
+}
+
+.projects-arrow:hover,
+.projects-arrow:focus-visible {
+  border-color: var(--color-primary);
+}
+
+.projects-arrow:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.projects-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ==========================================
+   INDICATORS
+========================================== */
+
+.projects-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 12px;
+  margin-top: 24px;
+}
+
+.projects-indicator {
+  width: 10px;
+  height: 10px;
+
+  background: transparent;
+  border: 1px solid var(--color-text-muted);
+
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
+}
+
+.projects-indicator.is-active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ==========================================
+   PROJECT DETAILS
+========================================== */
+
+.project-details {
+  position: relative;
+
+  margin-top: 42px;
+  padding: 36px 40px 36px 52px;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.project-details::before {
   content: "";
+
   position: absolute;
-  left: 50%;
-  width: 5px;
-  height: 5px;
-  background: #c5161d;
-  transform: translateX(-50%) rotate(45deg);
+  top: 36px;
+  bottom: 36px;
+  left: 24px;
+
+  width: 3px;
+
+  background: var(--color-primary);
 }
 
-/* Ромб сверху */
+.project-details h3 {
+  margin-bottom: 28px;
 
-.divider-core span::before {
-  top: -2px;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 500;
 }
 
-/* Ромб снизу */
+.project-details-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.8fr)
+    minmax(0, 1fr)
+    minmax(0, 1.5fr);
 
-.divider-core span::after {
-  bottom: -2px;
+  gap: 36px;
 }
 
-/* Маска создаёт большой разрыв между двумя узлами */
+.project-details-section h4 {
+  margin-bottom: 12px;
 
-.divider-core::before {
-  content: "";
-  position: absolute;
-  top: 82px;
-  bottom: 82px;
-  left: 50%;
-  width: 8px;
-  background: #f5f5f5;
-  transform: translateX(-50%);
-  z-index: 1;
+  color: var(--color-text);
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-details-section p,
+.project-details-section li {
+  color: var(--color-text-muted);
+
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.project-details-section ul {
+  display: grid;
+  gap: 6px;
 }
 
 /* ==========================================
@@ -173,32 +356,20 @@
 
 @media (max-width: 1024px) {
   .projects {
-    padding: 80px 0;
+    padding: var(--section-padding-tablet) 0;
   }
 
-  .projects-header {
-    margin-bottom: 40px;
+  .projects-track {
+    grid-auto-columns: calc((100% - 40px) / 3);
+    gap: 20px;
   }
 
-  .project-gallery {
-    grid-template-columns:
-      minmax(0, 1fr)
-      14px
-      minmax(0, 1fr)
-      14px
-      minmax(0, 1fr);
+  .project-details-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .project-panel img {
-    height: 420px;
-  }
-
-  .glorion-divider {
-    width: 14px;
-  }
-
-  .divider-core {
-    transform: translate(-50%, -50%) scale(0.9);
+  .project-details-section:last-child {
+    grid-column: 1 / -1;
   }
 }
 
@@ -208,31 +379,63 @@
 
 @media (max-width: 767px) {
   .projects {
-    padding: 64px 0;
+    padding: var(--section-padding-mobile) 0;
   }
 
   .projects-header {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 
-  .project-gallery {
-    grid-template-columns:
-      minmax(0, 1fr)
-      10px
-      minmax(0, 1fr)
-      10px
-      minmax(0, 1fr);
+  .projects-tabs {
+    margin-bottom: 28px;
   }
 
-  .project-panel img {
-    height: 260px;
+  .projects-tab {
+    min-height: 58px;
+    font-size: 16px;
   }
 
-  .glorion-divider {
-    width: 10px;
+  .projects-gallery {
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    gap: 10px;
   }
 
-  .divider-core {
-    transform: translate(-50%, -50%) scale(0.7);
+  .projects-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .projects-track {
+    grid-auto-columns: 100%;
+    gap: 16px;
+  }
+
+  .project-preview-title {
+    font-size: 16px;
+  }
+
+  .project-details {
+    margin-top: 32px;
+    padding: 28px 22px 28px 36px;
+  }
+
+  .project-details::before {
+    top: 28px;
+    bottom: 28px;
+    left: 18px;
+  }
+
+  .project-details-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-details-section:last-child {
+    grid-column: auto;
+  }
+
+  .project-details-section p,
+  .project-details-section li {
+    font-size: 16px;
   }
 }

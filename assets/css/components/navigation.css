@@ -1,246 +1,237 @@
 /* ==========================================
    PRIMARY NAVIGATION
-=========================================== */
+========================================== */
 
 .navigation {
-  margin-left: auto;
+    margin-left: auto;
 }
-
-/* Только главный список Header */
 
 .navigation > .navigation-list {
-  display: flex;
-  align-items: center;
-  gap: 34px;
-
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-}
-
-.navigation-item {
-  position: relative;
+    display: flex;
+    align-items: center;
+    gap: 34px;
 }
 
 /* ==========================================
-   MAIN NAVIGATION LINKS
-=========================================== */
+   NAVIGATION ITEMS
+========================================== */
 
-.navigation-link {
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: var(--header-height);
-  padding: 0;
-
-  border: none;
-  background: transparent;
-
-  color: var(--color-text);
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1;
-
-  text-decoration: none;
-  cursor: pointer;
+.navigation-item {
+    position: relative;
 }
 
-/* Horizontal GLORION line */
+.navigation-link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: var(--header-height);
+    padding: 0;
+
+    color: var(--color-text);
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: color var(--transition-fast);
+}
 
 .navigation-link::after {
-  content: "";
+    content: "";
 
-  position: absolute;
-  bottom: var(--nav-underline-offset);
-  left: 0;
+    position: absolute;
+    left: 0;
+    bottom: var(--nav-underline-offset);
 
-  width: 0;
-  height: 2px;
+    width: 100%;
+    height: 2px;
 
-  background: var(--color-primary);
+    background: var(--color-primary);
 
-  transition: width var(--transition);
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    transition: transform var(--transition);
 }
 
 .navigation-link:hover::after,
 .navigation-link:focus-visible::after,
 .navigation-item--submenu:hover > .navigation-link::after,
-.navigation-item--submenu:focus-within > .navigation-link::after {
-  width: 100%;
+.navigation-item--submenu:focus-within > .navigation-link::after,
+.navigation-item--submenu.is-open > .navigation-link::after {
+    transform: scaleX(1);
+}
+
+.navigation-link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 5px;
 }
 
 /* ==========================================
    SERVICES SUBMENU
-=========================================== */
+========================================== */
 
 .navigation-submenu {
-  position: absolute;
-  top: calc(100% - 1px);
-  left: 0;
-  z-index: 100;
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    z-index: 100;
 
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0;
+    min-width: 240px;
+    padding: 12px 0;
 
-  min-width: 235px;
-  margin: 0;
-  padding: 12px 0;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
 
-  list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+    transform: translateY(10px);
 
-  box-shadow:
-    0 16px 36px rgba(0, 0, 0, 0.08),
-    0 4px 12px rgba(0, 0, 0, 0.04);
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-
-  transform: translateY(8px);
-
-  transition:
-    opacity var(--transition),
-    visibility var(--transition),
-    transform var(--transition);
+    transition:
+        opacity var(--transition),
+        visibility var(--transition),
+        transform var(--transition);
 }
-
-/* Open submenu on desktop */
 
 .navigation-item--submenu:hover > .navigation-submenu,
 .navigation-item--submenu:focus-within > .navigation-submenu,
 .navigation-item--submenu.is-open > .navigation-submenu {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 
-  transform: translateY(0);
+    transform: translateY(0);
 }
-
-/* Submenu items */
 
 .navigation-submenu li {
-  position: relative;
-
-  display: block;
-  width: 100%;
+    width: 100%;
 }
 
-/* Vertical GLORION line */
-
 .navigation-submenu a {
-  position: relative;
+    position: relative;
 
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  width: 100%;
-  min-height: 44px;
-  padding: 10px 22px 10px 28px;
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 22px 11px 28px;
 
-  color: var(--color-text);
+    color: var(--color-text);
 
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.35;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.35;
 
-  text-decoration: none;
-
-  transition:
-    color var(--transition),
-    background-color var(--transition),
-    padding-left var(--transition);
+    transition:
+        background-color var(--transition-fast),
+        padding-left var(--transition);
 }
 
 .navigation-submenu a::before {
-  content: "";
+    content: "";
 
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  left: 14px;
+    position: absolute;
+    top: 11px;
+    bottom: 11px;
+    left: 14px;
 
-  width: 2px;
+    width: 2px;
 
-  background: var(--color-primary);
+    background: var(--color-primary);
 
-  opacity: 0;
-  transform: scaleY(0.35);
+    opacity: 0;
+    transform: scaleY(.35);
 
-  transition:
-    opacity var(--transition),
-    transform var(--transition);
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
 }
 
 .navigation-submenu a:hover,
 .navigation-submenu a:focus-visible,
 .navigation-submenu a.is-active {
-  padding-left: 32px;
-
-  background: rgba(197, 22, 29, 0.04);
+    padding-left: 32px;
+    background: rgba(197, 22, 29, .05);
 }
 
 .navigation-submenu a:hover::before,
 .navigation-submenu a:focus-visible::before,
 .navigation-submenu a.is-active::before {
-  opacity: 1;
-  transform: scaleY(1);
+    opacity: 1;
+    transform: scaleY(1);
 }
 
-/* Remove horizontal underline from submenu */
-
-.navigation-submenu a::after {
-  display: none;
+.navigation-submenu a:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: -4px;
 }
 
 /* ==========================================
    MOBILE MENU BUTTON
-=========================================== */
+========================================== */
 
 .menu-toggle {
-  display: none;
+    display: none;
 
-  width: 42px;
-  height: 42px;
-  padding: 9px;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
 
-  border: none;
-  background: transparent;
+    flex-shrink: 0;
 
-  cursor: pointer;
+    color: var(--color-text);
 }
 
 .menu-toggle span {
-  display: block;
+    display: block;
 
-  width: 100%;
-  height: 2px;
-  margin: 5px 0;
+    width: 100%;
+    height: 2px;
+    margin: 5px 0;
 
-  background: var(--color-text);
+    background: currentColor;
 
-  transition:
-    transform var(--transition),
-    opacity var(--transition);
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
 }
 
 .menu-toggle.is-active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+    transform: translateY(7px) rotate(45deg);
 }
 
 .menu-toggle.is-active span:nth-child(2) {
-  opacity: 0;
+    opacity: 0;
 }
 
 .menu-toggle.is-active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.menu-toggle:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+/* ==========================================
+   SMALL DESKTOP
+========================================== */
+
+@media (max-width: 1180px) {
+    .navigation > .navigation-list {
+        gap: 24px;
+    }
+
+    .navigation-link {
+        font-size: 13px;
+    }
 }

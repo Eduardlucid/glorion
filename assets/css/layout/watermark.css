@@ -1,0 +1,59 @@
+/* ==========================================
+   SITE BACKGROUND
+========================================== */
+
+body {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+}
+
+.site-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  overflow: hidden;
+  pointer-events: none;
+
+  background-color: #f4f4f1;
+}
+
+.site-background-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: min(72vw, 1100px);
+  max-width: none;
+  height: auto;
+
+  opacity: 0.12;
+
+  transform: translate(-50%, -50%);
+  filter: grayscale(100%);
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+  .site-background-logo {
+    width: min(82vw, 900px);
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 767px) {
+  .site-background-logo {
+    width: 115vw;
+    opacity: 0.10;
+  }
+}

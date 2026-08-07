@@ -65,6 +65,14 @@
 
 <body id="top">
 
+  <div class="site-background" aria-hidden="true">
+  <img
+    class="site-background-logo"
+    src="assets/images/background/glorion-background.svg"
+    alt=""
+  >
+</div>
+
   <!-- ==========================================
        HEADER
   =========================================== -->
@@ -107,111 +115,92 @@
       <!-- Navigation -->
 
       <nav
-        class="navigation"
-        id="primary-navigation"
-        aria-label="Primary navigation"
+  class="navigation"
+  id="primary-navigation"
+  aria-label="Primary navigation"
+>
+  <ul class="navigation-list">
+
+    <li class="navigation-item">
+      <a class="navigation-link" href="#about">
+        About
+      </a>
+    </li>
+
+    <li class="navigation-item navigation-item--submenu">
+
+      <a
+        class="navigation-link submenu-toggle"
+        href="#services"
+        aria-expanded="false"
+        aria-controls="services-submenu"
       >
+        Services
+      </a>
 
-        <ul class="navigation-list">
+      <ul
+        class="navigation-submenu"
+        id="services-submenu"
+      >
+        <li>
+          <a href="#structured-cabling">
+            Structured Cabling
+          </a>
+        </li>
 
-          <li class="navigation-item">
-            <a
-              class="navigation-link"
-              href="#about"
-            >
-              About
-            </a>
-          </li>
+        <li>
+          <a href="#fiber-optic">
+            Fiber Optic
+          </a>
+        </li>
 
-          <!-- Services with submenu -->
+        <li>
+          <a href="#wifi">
+            WiFi
+          </a>
+        </li>
 
-          <li class="navigation-item navigation-item--submenu">
+        <li>
+          <a href="#cctv">
+            CCTV
+          </a>
+        </li>
 
-            <button
-              class="navigation-link submenu-toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="services-submenu"
-            >
-              Services
-            </button>
+        <li>
+          <a href="#security-systems">
+            Security Systems
+          </a>
+        </li>
 
-            <ul
-              class="navigation-submenu"
-              id="services-submenu"
-            >
+        <li>
+          <a href="#audio-video">
+            Audio &amp; Video
+          </a>
+        </li>
+      </ul>
 
-              <li>
-                <a href="#structured-cabling">
-                  Structured Cabling
-                </a>
-              </li>
+    </li>
 
-              <li>
-                <a href="#fiber-optic">
-                  Fiber Optic
-                </a>
-              </li>
+    <li class="navigation-item">
+      <a class="navigation-link" href="#capabilities">
+        Capabilities
+      </a>
+    </li>
 
-              <li>
-                <a href="#wifi">
-                  WiFi
-                </a>
-              </li>
+    <li class="navigation-item">
+      <a class="navigation-link" href="#projects">
+        Projects
+      </a>
+    </li>
 
-              <li>
-                <a href="#cctv">
-                  CCTV
-                </a>
-              </li>
+    <li class="navigation-item">
+      <a class="navigation-link" href="#contact">
+        Contact
+      </a>
+    </li>
 
-              <li>
-                <a href="#security-systems">
-                  Security Systems
-                </a>
-              </li>
-
-              <li>
-                <a href="#audio-video">
-                  Audio &amp; Video
-                </a>
-              </li>
-
-            </ul>
-
-          </li>
-
-          <li class="navigation-item">
-            <a
-              class="navigation-link"
-              href="#capabilities"
-            >
-              Capabilities
-            </a>
-          </li>
-
-          <li class="navigation-item">
-            <a
-              class="navigation-link"
-              href="#projects"
-            >
-              Projects
-            </a>
-          </li>
-
-          <li class="navigation-item">
-            <a
-              class="navigation-link"
-              href="#contact"
-            >
-              Contact
-            </a>
-          </li>
-
-        </ul>
-
-      </nav>
-
+  </ul>
+</nav>
       <!-- Header actions -->
 
       <div class="header-actions">
@@ -272,10 +261,6 @@
 
         <div class="hero-content">
 
-          <span class="hero-label">
-            GLORION Technologies
-          </span>
-
           <h1 id="hero-title">
             Built Without<br>
             Compromise.
@@ -301,10 +286,6 @@
       <div class="container about-inner">
 
         <header class="about-header">
-
-          <span class="about-eyebrow">
-            Our Principle
-          </span>
 
           <h2 class="about-title">
             What <span>“Built Without Compromise”</span><br>
@@ -367,388 +348,370 @@
 <section class="services" id="services">
   <div class="container services-container">
 
-    <!-- Service 01 -->
+    <header class="services-header section-title">
+      <h2>Tailored Low-Voltage Solutions</h2>
 
-    <article 
-      class="service-item service-item--reverse"
-      id="structured-cabling"
->
+      <p>
+        Reliable technology for modern homes, businesses and commercial
+        environments. Every system is designed for long-term performance,
+        seamless operation and future growth.
+      </p>
+    </header>
 
-      <div class="service-gallery">
+    <div class="services-list">
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/structured-cabling/1.webp"
-            alt="Structured cabling infrastructure before installation"
-            loading="lazy"
-          >
+      <!-- Structured Cabling -->
+
+      <article class="service-item" id="structured-cabling">
+
+        <div class="service-gallery">
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/structured-cabling/1.webp"
+              alt="Structured cabling infrastructure before installation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="service-divider" aria-hidden="true"></div>
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/structured-cabling/2.webp"
+              alt="Structured cabling installation process"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="service-divider" aria-hidden="true"></div>
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/structured-cabling/3.webp"
+              alt="Completed structured cabling infrastructure"
+              loading="lazy"
+            >
+          </div>
+
         </div>
 
-        <div class="service-divider" aria-hidden="true">
+        <div class="service-content">
+
+          <h3 class="service-title">
+            Structured Cabling
+          </h3>
+
+          <p class="service-tagline">
+            Built to support everything that follows.
+          </p>
+
+          <p class="service-description">
+            Every reliable building begins with well-designed infrastructure.
+            GLORION delivers structured cabling systems for commercial offices,
+            healthcare facilities, educational institutions, retail spaces and
+            industrial environments, creating organized and scalable networks
+            engineered for dependable long-term performance.
+          </p>
+
         </div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/structured-cabling/2.webp"
-            alt="Structured cabling installation process"
-            loading="lazy"
-          >
+      </article>
+
+      <!-- Fiber Optic -->
+
+      <article class="service-item" id="fiber-optic">
+
+        <div class="service-gallery">
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/fiber-optic/1.webp"
+              alt="Fiber optic infrastructure before installation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="service-divider" aria-hidden="true"></div>
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/fiber-optic/2.webp"
+              alt="Fiber optic installation and testing process"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="service-divider" aria-hidden="true"></div>
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/fiber-optic/3.webp"
+              alt="Completed fiber optic infrastructure"
+              loading="lazy"
+            >
+          </div>
+
         </div>
 
-        <div class="service-divider" aria-hidden="true">
+        <div class="service-content">
+
+          <h3 class="service-title">
+            Fiber Optic
+          </h3>
+
+          <p class="service-tagline">
+            Precision where every connection matters.
+          </p>
+
+          <p class="service-description">
+            GLORION installs, terminates, tests and organizes fiber optic
+            infrastructure for telecommunications rooms, server rooms,
+            floor distribution, building backbones and inter-building
+            connections, delivering fast and reliable connectivity designed
+            for demanding commercial environments.
+          </p>
+
         </div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/structured-cabling/3.webp"
-            alt="Completed structured cabling infrastructure"
-            loading="lazy"
-          >
+      </article>
+
+      <!-- WiFi -->
+
+      <article class="service-item" id="wifi">
+
+        <div class="service-gallery">
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/wifi-network/1.webp"
+              alt="Wireless network environment before installation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="service-divider" aria-hidden="true"></div>
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/wifi-network/2.webp"
+              alt="Professional WiFi network installation process"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="service-divider" aria-hidden="true"></div>
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/wifi-network/3.webp"
+              alt="Completed commercial WiFi network"
+              loading="lazy"
+            >
+          </div>
+
         </div>
 
-      </div>
+        <div class="service-content">
 
-      <div class="service-content">
+          <h3 class="service-title">
+            WiFi
+          </h3>
 
-        <span class="service-number">01</span>
+          <p class="service-tagline">
+            Reliable wireless coverage engineered for every space.
+          </p>
 
-        <h2 class="service-title">
-          Structured Cabling
-        </h2>
+          <p class="service-description">
+            Professionally designed WiFi infrastructure provides seamless
+            coverage, reliable roaming and stable high-speed connectivity
+            throughout offices, commercial buildings, hospitality spaces
+            and modern homes, supporting secure communication and
+            uninterrupted daily operation.
+          </p>
 
-        <p class="service-tagline">
-          Built to support everything that follows.
-        </p>
-
-        <p class="service-description">
-          Every reliable building begins with well-designed infrastructure.
-          GLORION delivers structured cabling systems for commercial offices,
-          healthcare facilities, educational institutions, retail spaces and
-          industrial environments, creating organized and scalable networks
-          engineered for dependable long-term performance.
-        </p>
-
-      </div>
-
-    </article>
-
-    <!-- Service 02 -->
-
-    <article 
-      class="service-item service-item--reverse"
-      id="fiber-optic"
->
-
-      <div class="service-gallery">
-
-        <div class="service-panel">
-          <img
-            src="assets/images/services/fiber-optic/1.webp"
-            alt="Fiber optic infrastructure before installation"
-            loading="lazy"
-          >
         </div>
 
-        <div class="service-divider" aria-hidden="true">
+      </article>
+
+      <!-- CCTV -->
+
+      <article class="service-item" id="cctv">
+
+        <div class="service-gallery">
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/cctv-video/1.webp"
+              alt="Property before CCTV installation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="service-divider" aria-hidden="true"></div>
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/cctv-video/2.webp"
+              alt="CCTV and video surveillance installation process"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="service-divider" aria-hidden="true"></div>
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/cctv-video/3.webp"
+              alt="Completed CCTV and video surveillance system"
+              loading="lazy"
+            >
+          </div>
+
         </div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/fiber-optic/2.webp"
-            alt="Fiber optic installation and testing process"
-            loading="lazy"
-          >
+        <div class="service-content">
+
+          <h3 class="service-title">
+            CCTV
+          </h3>
+
+          <p class="service-tagline">
+            Complete visibility. Around the clock.
+          </p>
+
+          <p class="service-description">
+            Professional IP surveillance systems designed to protect
+            commercial buildings, offices, warehouses, hospitality venues
+            and residential properties. GLORION delivers intelligent camera
+            infrastructure, reliable recording systems and centralized
+            monitoring solutions that provide continuous awareness and
+            long-term operational confidence.
+          </p>
+
         </div>
 
-        <div class="service-divider" aria-hidden="true">
+      </article>
+
+      <!-- Security Systems -->
+
+      <article class="service-item" id="security-systems">
+
+        <div class="service-gallery">
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/security/1.webp"
+              alt="Property before security system installation"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="service-divider" aria-hidden="true"></div>
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/security/2.webp"
+              alt="Security system installation process"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="service-divider" aria-hidden="true"></div>
+
+          <div class="service-panel">
+            <img
+              src="assets/images/services/security/3.webp"
+              alt="Completed integrated security system"
+              loading="lazy"
+            >
+          </div>
+
         </div>
 
-        <div class="service-panel">
-          <img
-            src="assets/images/services/fiber-optic/3.webp"
-            alt="Completed fiber optic infrastructure"
-            loading="lazy"
-          >
+        <div class="service-content">
+
+          <h3 class="service-title">
+            Security Systems
+          </h3>
+
+          <p class="service-tagline">
+            Protecting people, property and everyday operations.
+          </p>
+
+          <p class="service-description">
+            Integrated security solutions including access control,
+            intrusion detection, intercom systems and intelligent building
+            security. Every installation is designed to provide dependable
+            protection, controlled access and seamless integration with
+            your existing technology infrastructure.
+          </p>
+
         </div>
 
-      </div>
+      </article>
 
-      <div class="service-content">
+      <!-- Audio & Video -->
 
-        <span class="service-number">02</span>
+      <article class="service-item" id="audio-video">
 
-        <h2 class="service-title">
-          Fiber Optic
-        </h2>
+        <div class="service-gallery">
 
-        <p class="service-tagline">
-          Precision where every connection matters.
-        </p>
+          <div class="service-panel">
+            <img
+              src="assets/images/services/audio-video/1.webp"
+              alt="Space before audio and video system installation"
+              loading="lazy"
+            >
+          </div>
 
-        <p class="service-description">
-          GLORION installs, terminates, tests and organizes fiber optic
-          infrastructure for telecommunications rooms, server rooms,
-          floor distribution, building backbones and inter-building
-          connections, delivering fast and reliable connectivity designed
-          for demanding commercial environments.
-        </p>
+          <div class="service-divider" aria-hidden="true"></div>
 
-      </div>
+          <div class="service-panel">
+            <img
+              src="assets/images/services/audio-video/2.webp"
+              alt="Audio and video system installation process"
+              loading="lazy"
+            >
+          </div>
 
-    </article>
+          <div class="service-divider" aria-hidden="true"></div>
 
-    <!-- Service 03 -->
+          <div class="service-panel">
+            <img
+              src="assets/images/services/audio-video/3.webp"
+              alt="Completed professional audio and video system"
+              loading="lazy"
+            >
+          </div>
 
-<article
-  class="service-item"
-  id="wifi"
->
+        </div>
 
-  <div class="service-gallery">
+        <div class="service-content">
 
-    <div class="service-panel">
-      <img
-        src="assets/images/services/wifi-network/1.webp"
-        alt="Wireless network environment before installation"
-        loading="lazy"
-      >
-    </div>
+          <h3 class="service-title">
+            Audio &amp; Video
+          </h3>
 
-    <div class="service-divider" aria-hidden="true"></div>
+          <p class="service-tagline">
+            Technology that sounds as good as it looks.
+          </p>
 
-    <div class="service-panel">
-      <img
-        src="assets/images/services/wifi-network/2.webp"
-        alt="Professional WiFi network installation process"
-        loading="lazy"
-      >
-    </div>
+          <p class="service-description">
+            Professional audio and video systems for boardrooms,
+            restaurants, retail spaces, hospitality environments and luxury
+            homes. From background music to presentation systems and
+            digital displays, every solution is engineered for exceptional
+            performance and effortless daily operation.
+          </p>
 
-    <div class="service-divider" aria-hidden="true"></div>
+        </div>
 
-    <div class="service-panel">
-      <img
-        src="assets/images/services/wifi-network/3.webp"
-        alt="Completed commercial WiFi network"
-        loading="lazy"
-      >
+      </article>
+
     </div>
 
   </div>
-
-  <div class="service-content">
-
-    <span class="service-number">03</span>
-
-    <h2 class="service-title">
-      WiFi
-    </h2>
-
-    <p class="service-tagline">
-      Reliable wireless coverage engineered for every space.
-    </p>
-
-    <p class="service-description">
-      Professionally designed WiFi infrastructure provides seamless
-      coverage, reliable roaming and stable high-speed connectivity
-      throughout offices, commercial buildings, hospitality spaces
-      and modern homes, supporting secure communication and
-      uninterrupted daily operation.
-    </p>
-
-  </div>
-
-</article>
-    <!-- Service 04 -->
-
-<article
-  class="service-item service-item--reverse"
-  id="cctv"
->
-
-  <div class="service-gallery">
-
-    <div class="service-panel">
-      <img
-        src="assets/images/services/cctv-video/1.webp"
-        alt="Property before CCTV installation"
-        loading="lazy"
-      >
-    </div>
-
-    <div class="service-divider" aria-hidden="true"></div>
-
-    <div class="service-panel">
-      <img
-        src="assets/images/services/cctv-video/2.webp"
-        alt="CCTV and video surveillance installation process"
-        loading="lazy"
-      >
-    </div>
-
-    <div class="service-divider" aria-hidden="true"></div>
-
-    <div class="service-panel">
-      <img
-        src="assets/images/services/cctv-video/3.webp"
-        alt="Completed CCTV and video surveillance system"
-        loading="lazy"
-      >
-    </div>
-
-  </div>
-
-  <div class="service-content">
-
-    <span class="service-number">04</span>
-
-    <h2 class="service-title">
-      CCTV
-    </h2>
-
-    <p class="service-tagline">
-      Complete visibility. Around the clock.
-    </p>
-
-    <p class="service-description">
-      Professional IP surveillance systems designed to protect
-      commercial buildings, offices, warehouses, hospitality venues
-      and residential properties. GLORION delivers intelligent camera
-      infrastructure, reliable recording systems and centralized
-      monitoring solutions that provide continuous awareness and
-      long-term operational confidence.
-    </p>
-
-  </div>
-
-</article>
-    <!-- Service 05 -->
-
-<article
-  class="service-item"
-  id="security-systems"
->
-
-  <div class="service-gallery">
-
-    <div class="service-panel">
-      <img
-        src="assets/images/services/security/1.webp"
-        alt="Property before security system installation"
-        loading="lazy"
-      >
-    </div>
-
-    <div class="service-divider" aria-hidden="true"></div>
-
-    <div class="service-panel">
-      <img
-        src="assets/images/services/security/2.webp"
-        alt="Security system installation process"
-        loading="lazy"
-      >
-    </div>
-
-    <div class="service-divider" aria-hidden="true"></div>
-
-    <div class="service-panel">
-      <img
-        src="assets/images/services/security/3.webp"
-        alt="Completed integrated security system"
-        loading="lazy"
-      >
-    </div>
-
-  </div>
-
-  <div class="service-content">
-
-    <span class="service-number">05</span>
-
-    <h2 class="service-title">
-      Security Systems
-    </h2>
-
-    <p class="service-tagline">
-      Protecting people, property and everyday operations.
-    </p>
-
-    <p class="service-description">
-      Integrated security solutions including access control,
-      intrusion detection, intercom systems and intelligent building
-      security. Every installation is designed to provide dependable
-      protection, controlled access and seamless integration with
-      your existing technology infrastructure.
-    </p>
-
-  </div>
-
-</article>
-
-    <!-- Service 06 -->
-
-<article
-  class="service-item service-item--reverse"
-  id="audio-video"
->
-
-  <div class="service-gallery">
-
-    <div class="service-panel">
-      <img
-        src="assets/images/services/audio-video/1.webp"
-        alt="Space before audio and video system installation"
-        loading="lazy"
-      >
-    </div>
-
-    <div class="service-divider" aria-hidden="true"></div>
-
-    <div class="service-panel">
-      <img
-        src="assets/images/services/audio-video/2.webp"
-        alt="Audio and video system installation process"
-        loading="lazy"
-      >
-    </div>
-
-    <div class="service-divider" aria-hidden="true"></div>
-
-    <div class="service-panel">
-      <img
-        src="assets/images/services/audio-video/3.webp"
-        alt="Completed professional audio and video system"
-        loading="lazy"
-      >
-    </div>
-
-  </div>
-
-  <div class="service-content">
-
-    <span class="service-number">06</span>
-
-    <h2 class="service-title">
-      Audio &amp; Video
-    </h2>
-
-    <p class="service-tagline">
-      Technology that sounds as good as it looks.
-    </p>
-
-    <p class="service-description">
-      Professional audio and video systems for boardrooms,
-      restaurants, retail spaces, hospitality environments and luxury
-      homes. From background music to presentation systems and
-      digital displays, every solution is engineered for exceptional
-      performance and effortless daily operation.
-    </p>
-
-  </div>
-
-</article>
-
-</div>
 </section>
 
     <!-- ==========================================
@@ -845,109 +808,115 @@
 
 </section>
     <!-- ==========================================
-     PROJECTS
-========================================== -->
+     PROFESSIONAL PROJECT EXPERIENCE
+=========================================== -->
 
 <section class="projects" id="projects">
+  <div class="container">
 
-  <div class="container projects-container">
+    <header class="section-title projects-header">
+      <h2>Professional Project Experience</h2>
 
-    <header class="projects-header">
-
-      <span class="projects-eyebrow">
-        Projects
-      </span>
-
-      <h2 class="projects-title">
-        Before. Process. Result.
-      </h2>
-
-      <p class="projects-intro">
-        Every successful project follows the same philosophy:
-        understand the challenge, engineer the solution and deliver
-        infrastructure built without compromise.
+      <p>
+        Selected work completed within professional installation teams
+        and independent subcontracting arrangements.
       </p>
-
     </header>
 
-    <article class="project-card">
+    <div class="projects-module">
 
-      <div class="project-gallery">
+      <div
+        class="projects-tabs"
+        role="tablist"
+        aria-label="Project regions"
+      >
+        <button
+          class="projects-tab is-active"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          data-project-region="canada"
+        >
+          Canada
+        </button>
 
-        <!-- A -->
+        <button
+          class="projects-tab"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          data-project-region="israel"
+        >
+          Israel
+        </button>
+      </div>
 
-        <div class="project-panel">
+      <div class="projects-gallery">
 
-          <img
-            src="assets/images/projects/galleries/project-a.webp"
-            alt="Project before installation"
-            loading="lazy"
-          >
+        <button
+          class="projects-arrow projects-arrow--previous"
+          type="button"
+          aria-label="Previous projects"
+          data-project-previous
+        >
+          ←
+        </button>
 
+        <div class="projects-viewport">
+          <div
+            class="projects-track"
+            data-project-track
+          ></div>
         </div>
 
-        <!-- Divider -->
-
-        <div class="glorion-divider" aria-hidden="true">
-
-          <span class="divider-top"></span>
-
-          <span class="divider-core">
-            <span></span>
-            <span></span>
-          </span>
-
-          <span class="divider-bottom"></span>
-
-        </div>
-
-        <!-- PATH -->
-
-        <div class="project-panel">
-
-          <img
-            src="assets/images/projects/galleries/project-path.webp"
-            alt="Project installation process"
-            loading="lazy"
-          >
-
-        </div>
-
-        <!-- Divider -->
-
-        <div class="glorion-divider" aria-hidden="true">
-
-          <span class="divider-top"></span>
-
-          <span class="divider-core">
-            <span></span>
-            <span></span>
-          </span>
-
-          <span class="divider-bottom"></span>
-
-        </div>
-
-        <!-- B -->
-
-        <div class="project-panel">
-
-          <img
-            src="assets/images/projects/galleries/project-b.webp"
-            alt="Completed project"
-            loading="lazy"
-          >
-
-        </div>
+        <button
+          class="projects-arrow projects-arrow--next"
+          type="button"
+          aria-label="Next projects"
+          data-project-next
+        >
+          →
+        </button>
 
       </div>
 
-    </article>
+      <div
+        class="projects-indicators"
+        aria-label="Project pages"
+        data-project-indicators
+      ></div>
+
+      <article
+        class="project-details"
+        aria-live="polite"
+        data-project-details
+      >
+        <h3 data-project-title></h3>
+
+        <div class="project-details-grid">
+
+          <section class="project-details-section">
+            <h4>Role</h4>
+            <p data-project-role></p>
+          </section>
+
+          <section class="project-details-section">
+            <h4>Technical Scope</h4>
+            <ul data-project-scope></ul>
+          </section>
+
+          <section class="project-details-section">
+            <h4>Responsibilities</h4>
+            <p data-project-responsibilities></p>
+          </section>
+
+        </div>
+      </article>
+
+    </div>
 
   </div>
-
 </section>
-
 </main>
 
 <script type="module" src="assets/js/main.js"></script>
