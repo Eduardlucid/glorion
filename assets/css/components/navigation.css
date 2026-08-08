@@ -3,60 +3,68 @@
 ========================================== */
 
 .navigation {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .navigation > .navigation-list {
-    display: flex;
-    align-items: center;
-    gap: 34px;
+  display: flex;
+  align-items: center;
+
+  gap: 34px;
 }
+
 
 /* ==========================================
    NAVIGATION ITEMS
 ========================================== */
 
 .navigation-item {
-    position: relative;
+  position: relative;
 }
 
 .navigation-link {
-    position: relative;
+  position: relative;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-    min-height: var(--header-height);
-    padding: 0;
+  min-height: var(--header-height);
+  padding: 0;
 
-    color: var(--color-text);
+  color: var(--color-text);
 
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition: color var(--transition-fast);
+  transition: color var(--transition-fast);
 }
 
+
+/* ==========================================
+   NAVIGATION UNDERLINE
+========================================== */
+
 .navigation-link::after {
-    content: "";
+  content: "";
 
-    position: absolute;
-    left: 0;
-    bottom: var(--nav-underline-offset);
+  position: absolute;
 
-    width: 100%;
-    height: 2px;
+  left: 0;
+  bottom: var(--nav-underline-offset);
 
-    background: var(--color-primary);
+  width: 100%;
+  height: 2px;
 
-    transform: scaleX(0);
-    transform-origin: left center;
+  background: var(--color-primary);
 
-    transition: transform var(--transition);
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition: transform var(--transition);
 }
 
 .navigation-link:hover::after,
@@ -64,174 +72,209 @@
 .navigation-item--submenu:hover > .navigation-link::after,
 .navigation-item--submenu:focus-within > .navigation-link::after,
 .navigation-item--submenu.is-open > .navigation-link::after {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .navigation-link:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 5px;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 5px;
 }
+
 
 /* ==========================================
    SERVICES SUBMENU
 ========================================== */
 
 .navigation-submenu {
-    position: absolute;
-    top: calc(100% - 1px);
-    left: 0;
-    z-index: 100;
+  position: absolute;
 
-    min-width: 240px;
-    padding: 12px 0;
+  top: calc(100% - 1px);
+  left: 0;
 
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-soft);
+  z-index: 100;
 
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+  min-width: 240px;
+  padding: 12px 0;
 
-    transform: translateY(10px);
+  background: var(--color-surface);
 
-    transition:
-        opacity var(--transition),
-        visibility var(--transition),
-        transform var(--transition);
+  border: 1px solid var(--color-border);
+
+  box-shadow: var(--shadow-soft);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition);
 }
 
 .navigation-item--submenu:hover > .navigation-submenu,
 .navigation-item--submenu:focus-within > .navigation-submenu,
 .navigation-item--submenu.is-open > .navigation-submenu {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
+
+/* ==========================================
+   SUBMENU ITEMS
+========================================== */
+
 .navigation-submenu li {
-    width: 100%;
+  width: 100%;
 }
 
 .navigation-submenu a {
-    position: relative;
+  position: relative;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    width: 100%;
-    min-height: 46px;
-    padding: 11px 22px 11px 28px;
+  width: 100%;
+  min-height: 46px;
 
-    color: var(--color-text);
+  padding: 11px 22px 11px 28px;
 
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1.35;
+  color: var(--color-text);
 
-    transition:
-        background-color var(--transition-fast),
-        padding-left var(--transition);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+
+  transition:
+    background-color var(--transition-fast),
+    padding-left var(--transition);
 }
+
+
+/* ==========================================
+   SUBMENU MARKER
+========================================== */
 
 .navigation-submenu a::before {
-    content: "";
+  content: "";
 
-    position: absolute;
-    top: 11px;
-    bottom: 11px;
-    left: 14px;
+  position: absolute;
 
-    width: 2px;
+  top: 11px;
+  bottom: 11px;
+  left: 14px;
 
-    background: var(--color-primary);
+  width: 2px;
 
-    opacity: 0;
-    transform: scaleY(.35);
+  background: var(--color-primary);
 
-    transition:
-        opacity var(--transition),
-        transform var(--transition);
+  opacity: 0;
+
+  transform: scaleY(0.35);
+
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
 }
+
+
+/* ==========================================
+   SUBMENU INTERACTION
+========================================== */
 
 .navigation-submenu a:hover,
 .navigation-submenu a:focus-visible,
 .navigation-submenu a.is-active {
-    padding-left: 32px;
-    background: rgba(197, 22, 29, .05);
+  padding-left: 32px;
+
+  background: rgba(197, 22, 29, 0.05);
 }
 
 .navigation-submenu a:hover::before,
 .navigation-submenu a:focus-visible::before,
 .navigation-submenu a.is-active::before {
-    opacity: 1;
-    transform: scaleY(1);
+  opacity: 1;
+
+  transform: scaleY(1);
 }
 
 .navigation-submenu a:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: -4px;
+  outline: 2px solid var(--color-primary);
+  outline-offset: -4px;
 }
+
 
 /* ==========================================
    MOBILE MENU BUTTON
 ========================================== */
 
 .menu-toggle {
-    display: none;
+  display: none;
 
-    width: 42px;
-    height: 42px;
-    padding: 9px;
+  width: 42px;
+  height: 42px;
 
-    flex-shrink: 0;
+  padding: 9px;
 
-    color: var(--color-text);
+  flex-shrink: 0;
+
+  color: var(--color-text);
 }
 
 .menu-toggle span {
-    display: block;
+  display: block;
 
-    width: 100%;
-    height: 2px;
-    margin: 5px 0;
+  width: 100%;
+  height: 2px;
 
-    background: currentColor;
+  margin: 5px 0;
 
-    transition:
-        transform var(--transition),
-        opacity var(--transition);
+  background: currentColor;
+
+  transition:
+    transform var(--transition),
+    opacity var(--transition);
 }
 
+
+/* ==========================================
+   MOBILE MENU BUTTON ACTIVE
+========================================== */
+
 .menu-toggle.is-active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .menu-toggle.is-active span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
 
 .menu-toggle.is-active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .menu-toggle:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 3px;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
+
 
 /* ==========================================
    SMALL DESKTOP
 ========================================== */
 
 @media (max-width: 1180px) {
-    .navigation > .navigation-list {
-        gap: 24px;
-    }
 
-    .navigation-link {
-        font-size: 13px;
-    }
+  .navigation > .navigation-list {
+    gap: 24px;
+  }
+
+  .navigation-link {
+    font-size: 13px;
+  }
 }

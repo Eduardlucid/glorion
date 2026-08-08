@@ -1,124 +1,90 @@
+/* ==========================================
+   GLOBAL SECTION
+========================================== */
+
 .section {
-
-    padding: var(--section-padding) 0;
-
+  padding: var(--section-padding) 0;
 }
+
+
+/* ==========================================
+   SECTION TITLE
+========================================== */
 
 .section-title {
+  max-width: 760px;
 
-    max-width: 760px;
+  margin: 0 auto var(--space-xl);
 
-    margin: 0 auto 64px;
-
-    text-align: center;
-
+  text-align: center;
 }
+
+
+/* ==========================================
+   SECTION TITLE HEADING
+========================================== */
 
 .section-title h2 {
+  display: inline-block;
 
-    position: relative;
+  margin: 0 0 var(--space-md);
 
-    display: inline-block;
+  color: var(--color-text);
 
-    margin: 0 0 22px;
-
-    padding-left: 28px;
-
-    color: var(--color-text);
-
-    font-size: clamp(34px, 5vw, 54px);
-    font-weight: 600;
-    line-height: 1.1;
-    letter-spacing: -.02em;
-
+  font-size: var(--font-section-title);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
 }
 
-.section-title h2::before {
 
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    top: .42em;
-
-    width: 10px;
-    height: 10px;
-
-    border-radius: 50%;
-
-    background: var(--color-primary);
-
-}
+/* ==========================================
+   SECTION TITLE DESCRIPTION
+========================================== */
 
 .section-title p {
+  max-width: 680px;
 
-    max-width: 680px;
+  margin: 0 auto;
 
-    margin: 0 auto;
+  color: var(--color-text-muted);
 
-    color: var(--color-text-muted);
-
-    font-size: 18px;
-    line-height: 1.75;
-
+  font-size: var(--font-body);
+  line-height: 1.65;
 }
+
 
 /* ==========================================
    TABLET
 ========================================== */
 
-@media (max-width:1024px){
+@media (max-width: 1024px) {
 
-    .section{
+  .section {
+    padding: var(--section-padding-tablet) 0;
+  }
 
-        padding: var(--section-padding-tablet) 0;
-
-    }
-
-    .section-title{
-
-        margin-bottom:52px;
-
-    }
-
+  .section-title {
+    margin-bottom: 52px;
+  }
 }
+
 
 /* ==========================================
    MOBILE
 ========================================== */
 
-@media (max-width:768px){
+@media (max-width: 767px) {
 
-    .section{
+  .section {
+    padding: var(--section-padding-mobile) 0;
+  }
 
-        padding: var(--section-padding-mobile) 0;
+  .section-title {
+    margin-bottom: 40px;
+  }
 
-    }
-
-    .section-title{
-
-        margin-bottom:40px;
-
-    }
-
-    .section-title h2{
-
-        padding-left:22px;
-
-    }
-
-    .section-title h2::before{
-
-        width:8px;
-        height:8px;
-
-    }
-
-    .section-title p{
-
-        font-size:17px;
-
-    }
-
+  .section-title p {
+    font-size: 17px;
+  }
 }

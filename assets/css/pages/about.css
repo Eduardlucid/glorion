@@ -1,0 +1,279 @@
+/* ==========================================
+   ABOUT
+========================================== */
+
+.about {
+  min-height: calc(100vh - var(--header-height));
+
+  padding: 44px 0 28px;
+
+  background: transparent;
+
+  color: var(--color-text);
+
+  scroll-margin-top: var(--header-height);
+}
+
+
+/* ==========================================
+   ABOUT LAYOUT
+========================================== */
+
+.about-inner {
+  display: flex;
+  flex-direction: column;
+
+  min-height: calc(100vh - var(--header-height) - 72px);
+}
+
+
+/* ==========================================
+   ABOUT HEADER
+========================================== */
+
+.about-header {
+  width: 100%;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+/* ==========================================
+   ABOUT TITLE
+========================================== */
+
+.about-title {
+  width: fit-content;
+  max-width: 920px;
+
+  margin: 0 auto;
+
+  font-size: calc(var(--font-h1) * 0.9);
+  font-weight: var(--weight-regular);
+
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+
+  text-align: left;
+}
+
+.about-title span {
+  color: var(--color-primary);
+}
+
+
+/* ==========================================
+   ABOUT CONTENT
+========================================== */
+
+.about-content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.25fr)
+    minmax(0, 0.75fr);
+
+  gap: 56px;
+
+  width: 100%;
+
+  margin-top: auto;
+
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(17, 17, 17, 0.16);
+}
+
+
+/* ==========================================
+   ABOUT TEXT
+========================================== */
+
+.about-manifesto,
+.about-message {
+  width: 100%;
+  max-width: none;
+}
+
+.about-manifesto > p,
+.about-message > p {
+  margin: 0;
+
+  color: #3d3d3d;
+
+  font-size: var(--font-body);
+  line-height: 1.45;
+}
+
+
+/* ==========================================
+   ABOUT PRINCIPLES
+========================================== */
+
+.about-principles {
+  display: flex;
+  flex-direction: column;
+
+  margin: 16px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.about-principles li {
+  position: relative;
+
+  padding: 7px 0 7px 22px;
+
+  border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+
+  font-size: clamp(17px, 1.15vw, 20px);
+  font-weight: var(--weight-medium);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+
+/* ==========================================
+   ABOUT PRINCIPLE MARKER
+========================================== */
+
+.about-principles li::before {
+  content: "";
+
+  position: absolute;
+
+  top: 1em;
+  left: 0;
+
+  width: 6px;
+  height: 6px;
+
+  background: var(--color-primary);
+}
+
+
+/* ==========================================
+   ABOUT QUALITY
+========================================== */
+
+.about-quality {
+  margin-top: 18px !important;
+
+  color: var(--color-text) !important;
+}
+
+
+/* ==========================================
+   ABOUT SIGNATURE
+========================================== */
+
+.about-signature {
+  margin-top: 18px;
+  padding-top: 14px;
+
+  border-top: 1px solid rgba(17, 17, 17, 0.16);
+}
+
+.about-signature p {
+  margin: 0 0 4px;
+
+  font-size: clamp(18px, 1.3vw, 22px);
+  font-weight: var(--weight-medium);
+
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.about-signature p:last-child {
+  margin-bottom: 0;
+
+  color: var(--color-primary);
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+
+  .about {
+    min-height: auto;
+
+    padding: var(--section-padding-tablet) 0;
+
+    scroll-margin-top: var(--header-height);
+  }
+
+  .about-inner {
+    min-height: auto;
+  }
+
+  .about-header {
+    text-align: left;
+  }
+
+  .about-title {
+    max-width: none;
+
+    font-size: var(--font-h2);
+
+    line-height: 1;
+
+    text-align: left;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-xl);
+
+    margin-top: var(--space-xl);
+  }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 767px) {
+
+  .about {
+    padding: var(--section-padding-mobile) 0;
+  }
+
+  .about-title br {
+    display: none;
+  }
+
+  .about-content {
+    gap: var(--space-lg);
+
+    padding-top: var(--space-md);
+  }
+
+  .about-principles {
+    margin-top: var(--space-md);
+  }
+
+  .about-principles li {
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    font-size: 18px;
+  }
+
+  .about-signature {
+    margin-top: var(--space-md);
+  }
+
+  .about-signature p {
+    font-size: 22px;
+  }
+
+}

@@ -3,167 +3,160 @@
 ========================================== */
 
 .hero {
-    margin-top: var(--header-height);
-    padding: clamp(64px, 6vw, 88px) 0 0;
+  margin-top: var(--header-height);
 
-    background: var(--color-surface);
-    overflow: hidden;
+  background: var(--color-surface);
+
+  overflow: hidden;
 }
+
+
+/* ==========================================
+   HERO CONTAINER
+========================================== */
 
 .hero-container {
-    display: flex;
-    flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  height: calc(100vh - var(--header-height));
+
+  padding-bottom: 28px;
 }
+
+
+/* ==========================================
+   HERO CONTENT
+========================================== */
 
 .hero-content {
-    max-width: 940px;
-    padding-bottom: clamp(48px, 5vw, 72px);
+  max-width: 940px;
+
+  padding-top: 48px;
+  padding-bottom: 32px;
 }
 
-/* Старая красная подпись скрыта */
+
+/* ==========================================
+   HERO LABEL
+========================================== */
 
 .hero-label {
-    display: none;
+  display: none;
 }
+
 
 /* ==========================================
    HERO TITLE
 ========================================== */
 
 .hero h1 {
-    position: relative;
+  max-width: 920px;
 
-    max-width: 920px;
-    margin: 0 0 28px;
-    padding-left: clamp(24px, 2.4vw, 34px);
+  margin-bottom: var(--space-md);
 
-    color: var(--color-text);
-
-    font-size: clamp(64px, 8vw, 118px);
-    font-weight: 500;
-    line-height: 0.93;
-    letter-spacing: -0.045em;
+  font-size: calc(var(--font-h1) * 0.9);
+  font-weight: var(--weight-regular);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
 }
 
-/* Фирменная красная точка */
-
-.hero h1::before {
-    content: "";
-
-    position: absolute;
-    top: 0.36em;
-    left: 0;
-
-    width: clamp(9px, 0.8vw, 13px);
-    aspect-ratio: 1;
-
-    background: var(--color-primary);
-    border-radius: 50%;
-}
-
-.hero p {
-    max-width: 650px;
-
-    color: var(--color-text-muted);
-
-    font-size: 19px;
-    line-height: 1.65;
-}
 
 /* ==========================================
-   HERO IMAGE
+   HERO DESCRIPTION
+========================================== */
+
+.hero p {
+  max-width: 650px;
+}
+
+
+/* ==========================================
+   HERO VISUAL
 ========================================== */
 
 .hero-visual {
-    position: relative;
+  position: relative;
 
-    width: 100%;
-    aspect-ratio: 16 / 9;
+  width: 100%;
+  min-height: 0;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    background-image:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.04),
-            rgba(0, 0, 0, 0)
-        ),
-        url("../../images/hero/glorion-hero.webp");
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.04),
+      rgba(0, 0, 0, 0)
+    ),
+    url("../../images/hero/glorion-hero.webp");
 
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
 
 /* ==========================================
    SMALL DESKTOP
 ========================================== */
 
-@media (max-width: 1366px) {
-    .hero h1 {
-        font-size: clamp(56px, 7vw, 88px);
-        letter-spacing: -0.04em;
-    }
+@media (max-width: 1366px) and (min-width: 1025px) {
+
+  .hero-content {
+    padding-top: 42px;
+    padding-bottom: 28px;
+  }
+
 }
+
 
 /* ==========================================
    TABLET
 ========================================== */
 
 @media (max-width: 1024px) {
-    .hero {
-        padding-top: 64px;
-    }
 
-    .hero-content {
-        padding-bottom: 48px;
-    }
+  .hero-container {
+    display: flex;
+    flex-direction: column;
 
-    .hero h1 {
-        font-size: clamp(48px, 8vw, 72px);
-        letter-spacing: -0.035em;
-    }
+    height: auto;
 
-    .hero p {
-        font-size: 18px;
-    }
+    padding-bottom: 0;
+  }
 
-    .hero-visual {
-        aspect-ratio: 4 / 3;
-    }
+  .hero-content {
+    padding-top: 64px;
+    padding-bottom: 48px;
+  }
+
+  .hero h1 {
+    font-size: var(--font-h1);
+  }
+
+  .hero-visual {
+    aspect-ratio: 4 / 3;
+  }
+
 }
+
 
 /* ==========================================
    MOBILE
 ========================================== */
 
-@media (max-width: 768px) {
-    .hero {
-        padding-top: 52px;
-    }
+@media (max-width: 767px) {
 
-    .hero-content {
-        padding-bottom: 36px;
-    }
+  .hero-content {
+    padding-top: 52px;
+    padding-bottom: 36px;
+  }
 
-    .hero h1 {
-        padding-left: 22px;
+  .hero-visual {
+    aspect-ratio: 4 / 3;
 
-        font-size: clamp(44px, 13vw, 56px);
-        line-height: 0.95;
-        letter-spacing: -0.03em;
-    }
+    background-position: center;
+  }
 
-    .hero h1::before {
-        width: 8px;
-    }
-
-    .hero p {
-        font-size: 17px;
-    }
-
-    .hero-visual {
-        aspect-ratio: 4 / 3;
-        background-position: center center;
-    }
 }

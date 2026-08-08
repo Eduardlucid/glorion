@@ -1,5 +1,6 @@
 :root {
 
+
   /* ==========================================
      COLORS
   ========================================== */
@@ -16,11 +17,30 @@
   --color-dark: #1d1d1d;
   --color-border: #dddddd;
 
+
   /* ==========================================
-     TYPOGRAPHY
-  ========================================== */
+   TYPOGRAPHY
+========================================== */
 
   --font-primary: Arial, Helvetica, sans-serif;
+
+  --font-h1: clamp(52px, 5vw, 76px);
+  --font-h2: clamp(38px, 3.5vw, 54px);
+  --font-h3: clamp(28px, 2.4vw, 38px);
+
+  --font-subtitle: clamp(20px, 1.5vw, 24px);
+
+  --font-body: 17px;
+  --font-small: 14px;
+
+  --line-heading: 1.1;
+  --line-body: 1.65;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
 
   /* ==========================================
      LAYOUT
@@ -29,13 +49,36 @@
   --container-width: 1200px;
   --container-padding: 32px;
 
-  --header-height: 82px;
+  --header-height: 78px;
 
-  --section-padding: 100px;
-  --section-padding-tablet: 80px;
-  --section-padding-mobile: 64px;
+  --section-padding: 80px;
+  --section-padding-large: 100px;
+  --section-padding-compact: 56px;
 
-  --nav-underline-offset: 21px;
+  --section-padding-tablet: 72px;
+  --section-padding-mobile: 56px;
+
+  --nav-underline-offset: 20px;
+
+
+  /* ==========================================
+     HERO PROPORTION
+  ========================================== */
+
+  --hero-height: calc(100vh - var(--header-height));
+
+
+  /* ==========================================
+     SPACING
+  ========================================== */
+
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 64px;
+  --space-xxl: 96px;
+
 
   /* ==========================================
      BORDER RADIUS
@@ -45,18 +88,21 @@
   --radius-medium: 12px;
   --radius-large: 18px;
 
+
   /* ==========================================
      SHADOWS
   ========================================== */
 
-  --shadow-soft: 0 18px 50px rgba(0, 0, 0, .08);
+  --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.08);
+
 
   /* ==========================================
      TRANSITIONS
   ========================================== */
 
-  --transition-fast: .2s ease;
-  --transition: .25s ease;
-  --transition-slow: .4s ease;
+  --transition-fast: 0.2s ease;
+  --transition: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
 
 }

@@ -3,260 +3,398 @@
 ========================================== */
 
 .services {
-    padding: var(--section-padding) 0;
-    background: var(--color-surface);
-    scroll-margin-top: var(--header-height);
+  padding: var(--section-padding-large) 0;
+
+  background: var(--color-surface);
+
+  scroll-margin-top: var(--header-height);
 }
 
 .services-container {
-    width: 100%;
+  width: 100%;
 }
+
+
+/* ==========================================
+   SERVICES HEADER
+========================================== */
 
 .services-header {
-    margin-bottom: 80px;
+  margin-bottom: var(--space-xl);
 }
 
+
+/* ==========================================
+   SERVICES LIST
+========================================== */
+
 .services-list {
-    display: flex;
-    flex-direction: column;
-    gap: 120px;
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-xxl);
 }
+
 
 /* ==========================================
    SERVICE ITEM
 ========================================== */
 
 .service-item {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: stretch;
-    min-width: 0;
+  display: grid;
 
-    scroll-margin-top: calc(var(--header-height) + 24px);
+  grid-template-columns:
+    minmax(0, 44fr)
+    minmax(0, 44fr);
+
+  column-gap: 12%;
+
+  align-items: center;
+
+  min-width: 0;
+
+  scroll-margin-top: calc(var(--header-height) + 24px);
 }
 
-/* Чёткое чередование блоков */
+
+/* ==========================================
+   SERVICE ORDER
+========================================== */
 
 .service-item:nth-child(odd) .service-gallery {
-    order: 1;
+  order: 1;
 }
 
 .service-item:nth-child(odd) .service-content {
-    order: 2;
+  order: 2;
 }
 
 .service-item:nth-child(even) .service-gallery {
-    order: 2;
+  order: 2;
 }
 
 .service-item:nth-child(even) .service-content {
-    order: 1;
+  order: 1;
 }
+
 
 /* ==========================================
    SERVICE GALLERY
 ========================================== */
 
 .service-gallery {
-    display: grid;
-    grid-template-columns:
-        minmax(0, 1fr)
-        4px
-        minmax(0, 1fr)
-        4px
-        minmax(0, 1fr);
+  display: grid;
 
-    min-width: 0;
-    min-height: 520px;
+  grid-template-columns:
+    minmax(0, 1fr)
+    4px
+    minmax(0, 1fr)
+    4px
+    minmax(0, 1fr);
 
-    overflow: hidden;
-    background: var(--color-surface);
+  width: 100%;
+  height: clamp(340px, 38vh, 400px);
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: var(--color-surface);
 }
 
+
+/* ==========================================
+   SERVICE PANEL
+========================================== */
+
 .service-panel {
-    position: relative;
-    min-width: 0;
-    overflow: hidden;
+  position: relative;
+
+  min-width: 0;
+
+  overflow: hidden;
 }
 
 .service-panel img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    object-fit: cover;
-    object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 
+
 /* ==========================================
-   SERVICE DIVIDER
+   SERVICE IMAGE DIVIDER
 ========================================== */
 
 .service-divider {
-    position: relative;
-    width: 4px;
-    height: 100%;
+  position: relative;
+
+  width: 4px;
+  height: 100%;
 }
 
 .service-divider::after {
-    content: "";
+  content: "";
 
-    position: absolute;
-    top: 35%;
-    bottom: 35%;
-    left: 50%;
+  position: absolute;
 
-    width: 2px;
+  top: 35%;
+  bottom: 35%;
+  left: 50%;
 
-    background: var(--color-primary);
-    transform: translateX(-50%);
+  width: 2px;
+
+  background: var(--color-primary);
+
+  transform: translateX(-50%);
 }
+
 
 /* ==========================================
    SERVICE CONTENT
 ========================================== */
 
 .service-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    width: 100%;
-    padding: clamp(40px, 4vw, 64px);
+  width: 100%;
+
+  padding: var(--space-md) 0;
 }
+
+
+/* ==========================================
+   SERVICE HEADING
+========================================== */
+
+.service-heading {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+/* ==========================================
+   SERVICE TITLE
+========================================== */
 
 .service-title {
-    font-size: clamp(42px, 4vw, 58px);
-    font-weight: 500;
-    line-height: 1.08;
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-size: var(--font-service-title);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
 }
+
+
+/* ==========================================
+   SERVICE TITLE DIVIDER
+========================================== */
+
+.service-title-divider {
+  width: 72px;
+  height: 2px;
+
+  margin-top: var(--space-md);
+
+  background: var(--color-primary);
+}
+
+
+/* ==========================================
+   SERVICE TAGLINE
+========================================== */
 
 .service-tagline {
-    margin-top: 22px;
+  max-width: 500px;
 
-    color: var(--color-text);
+  margin-top: var(--space-lg);
 
-    font-size: clamp(21px, 2vw, 25px);
-    font-weight: 400;
-    line-height: 1.4;
+  color: var(--color-text);
+
+  font-size: var(--font-subtitle);
+  font-weight: 400;
+  line-height: 1.4;
 }
+
+
+/* ==========================================
+   SERVICE DESCRIPTION
+========================================== */
 
 .service-description {
-    margin-top: 28px;
+  max-width: 540px;
 
-    color: var(--color-text-muted);
+  margin-top: var(--space-md);
 
-    font-size: 19px;
-    line-height: 1.75;
+  color: var(--color-text-muted);
+
+  font-size: var(--font-body);
+  line-height: 1.65;
 }
+
 
 /* ==========================================
    TABLET
 ========================================== */
 
 @media (max-width: 1024px) {
-    .services {
-        padding: var(--section-padding-tablet) 0;
-    }
 
-    .services-header {
-        margin-bottom: 64px;
-    }
+  .services {
+    padding: var(--section-padding-tablet) 0;
+  }
 
-    .services-list {
-        gap: 96px;
-    }
+  .services-header {
+    margin-bottom: var(--space-xl);
+  }
 
-    .service-item {
-        grid-template-columns: 1fr;
-        gap: 36px;
-    }
+  .services-list {
+    gap: var(--space-xl);
+  }
 
-    .service-item .service-gallery,
-    .service-item .service-content {
-        order: initial;
-    }
+  .service-item {
+    grid-template-columns: 1fr;
 
-    .service-gallery {
-        min-height: 0;
-        aspect-ratio: 4 / 3;
-    }
+    column-gap: 0;
+    row-gap: var(--space-lg);
+  }
 
-    .service-content {
-        padding: 0 24px;
-    }
+  .service-item .service-gallery,
+  .service-item .service-content {
+    order: initial;
+  }
+
+  .service-gallery {
+    height: auto;
+
+    aspect-ratio: 4 / 3;
+  }
+
+  .service-content {
+    padding: 0 24px;
+  }
+
+  .service-tagline {
+    margin-top: var(--space-md);
+  }
 }
+
 
 /* ==========================================
    MOBILE
 ========================================== */
 
 @media (max-width: 767px) {
-    .services {
-        padding: var(--section-padding-mobile) 0;
-    }
 
-    .services-header {
-        margin-bottom: 48px;
-    }
+  .services {
+    padding: var(--section-padding-mobile) 0;
+  }
 
-    .services-list {
-        gap: 72px;
-    }
+  .services-header {
+    margin-bottom: var(--space-lg);
+  }
 
-    .service-item {
-        gap: 28px;
-    }
+  .services-list {
+    gap: var(--space-xl);
+  }
 
-    .service-gallery {
-        grid-template-columns:
-            minmax(0, 1fr)
-            3px
-            minmax(0, 1fr)
-            3px
-            minmax(0, 1fr);
+  .service-item {
+    row-gap: var(--space-md);
+  }
 
-        aspect-ratio: 4 / 3;
-    }
+  .service-gallery {
+    grid-template-columns:
+      minmax(0, 1fr)
+      3px
+      minmax(0, 1fr)
+      3px
+      minmax(0, 1fr);
 
-    .service-divider {
-        width: 3px;
-    }
+    aspect-ratio: 4 / 3;
+  }
 
-    .service-divider::after {
-        width: 1px;
-    }
+  .service-divider {
+    width: 3px;
+  }
 
-    .service-content {
-        padding: 0 18px;
-    }
+  .service-divider::after {
+    width: 1px;
+  }
 
-    .service-title {
-        font-size: 38px;
-    }
+  .service-content {
+    padding: 0 18px;
+  }
 
-    .service-tagline {
-        font-size: 21px;
-    }
+  .service-title {
+    font-size: 38px;
+  }
 
-    .service-description {
-        font-size: 17px;
-    }
+  .service-title-divider {
+    width: 56px;
+  }
+
+  .service-tagline {
+    margin-top: var(--space-md);
+
+    font-size: 21px;
+  }
+
+  .service-description {
+    font-size: 17px;
+  }
 }
+
 
 /* ==========================================
    LARGE SCREENS
 ========================================== */
 
 @media (min-width: 1600px) {
-    .services-list {
-        gap: 140px;
-    }
 
-    .service-gallery {
-        min-height: 580px;
-    }
+  .service-gallery {
+    height: clamp(360px, 38vh, 420px);
+  }
+}
 
-    .service-content {
-        padding: 56px 72px;
-    }
+/* ==========================================
+   SERVICE CONTENT ALIGNMENT
+========================================== */
+
+/* Image left — content starts near image */
+
+.service-item:nth-child(odd) .service-content {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.service-item:nth-child(odd) .service-heading,
+.service-item:nth-child(odd) .service-tagline,
+.service-item:nth-child(odd) .service-description {
+  align-items: flex-start;
+  text-align: left;
+}
+
+
+/* Image right — content starts near image */
+
+.service-item:nth-child(even) .service-content {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.service-item:nth-child(even) .service-heading {
+  align-items: flex-end;
+}
+
+.service-item:nth-child(even) .service-tagline,
+.service-item:nth-child(even) .service-description {
+  text-align: right;
 }

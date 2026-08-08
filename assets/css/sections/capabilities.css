@@ -3,20 +3,16 @@
 ========================================== */
 
 .capabilities {
+  padding: 90px 0;
 
-    padding: 90px 0;
+  border-top: 1px solid rgba(32, 32, 32, 0.10);
+  border-bottom: 1px solid rgba(32, 32, 32, 0.10);
 
-    border-top: 1px solid #e8e8e8;
-    border-bottom: 1px solid #e8e8e8;
-
-    background: #ffffff;
-
+  background: transparent;
 }
 
-.capabilities .container{
-
-    max-width: 1320px;
-
+.capabilities .container {
+  max-width: 1320px;
 }
 
 
@@ -24,19 +20,17 @@
    TITLE
 ========================================== */
 
-.capabilities-title{
+.capabilities-title {
+  margin: 0 0 48px;
 
-    margin:0 0 48px;
+  text-align: center;
 
-    text-align:center;
+  color: var(--color-primary);
 
-    font-size:14px;
-    font-weight:700;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-
-    color:#c5161d;
-
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 
@@ -44,22 +38,18 @@
    LIST
 ========================================== */
 
-.capabilities-list{
+.capabilities-list {
+  display: flex;
+  flex-wrap: wrap;
 
-    display:flex;
+  justify-content: center;
+  align-items: center;
 
-    flex-wrap:wrap;
+  gap: 18px 14px;
 
-    justify-content:center;
+  max-width: 1200px;
 
-    align-items:center;
-
-    gap:18px 14px;
-
-    max-width:1200px;
-
-    margin:0 auto;
-
+  margin: 0 auto;
 }
 
 
@@ -67,24 +57,18 @@
    ITEMS
 ========================================== */
 
-.capabilities-list span{
+.capabilities-list span {
+  color: #555555;
 
-    font-size:17px;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
 
-    font-weight:400;
-
-    line-height:1.6;
-
-    color:#555555;
-
-    transition:.25s ease;
-
+  transition: var(--transition);
 }
 
-.capabilities-list span:hover{
-
-    color:#111111;
-
+.capabilities-list span:hover {
+  color: #111111;
 }
 
 
@@ -92,16 +76,13 @@
    DIVIDER
 ========================================== */
 
-.capabilities-list .divider{
+.capabilities-list .divider {
+  color: var(--color-primary);
 
-    color:#c5161d;
+  font-size: 20px;
+  font-weight: 300;
 
-    font-size:20px;
-
-    font-weight:300;
-
-    user-select:none;
-
+  user-select: none;
 }
 
 
@@ -109,20 +90,15 @@
    TABLET
 ========================================== */
 
-@media (max-width:992px){
+@media (max-width: 992px) {
 
-    .capabilities{
+  .capabilities {
+    padding: 70px 0;
+  }
 
-        padding:70px 0;
-
-    }
-
-    .capabilities-list{
-
-        gap:16px 12px;
-
-    }
-
+  .capabilities-list {
+    gap: 16px 12px;
+  }
 }
 
 
@@ -130,40 +106,28 @@
    MOBILE
 ========================================== */
 
-@media (max-width:768px){
+@media (max-width: 768px) {
 
-    .capabilities{
+  .capabilities {
+    padding: 60px 0;
+  }
 
-        padding:60px 0;
+  .capabilities-title {
+    margin-bottom: 36px;
 
-    }
+    font-size: 13px;
+    letter-spacing: 0.20em;
+  }
 
-    .capabilities-title{
+  .capabilities-list {
+    gap: 14px 10px;
+  }
 
-        margin-bottom:36px;
+  .capabilities-list span {
+    font-size: 15px;
+  }
 
-        font-size:13px;
-
-        letter-spacing:.20em;
-
-    }
-
-    .capabilities-list{
-
-        gap:14px 10px;
-
-    }
-
-    .capabilities-list span{
-
-        font-size:15px;
-
-    }
-
-    .capabilities-list .divider{
-
-        font-size:18px;
-
-    }
-
+  .capabilities-list .divider {
+    font-size: 18px;
+  }
 }
